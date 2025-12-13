@@ -1,0 +1,3 @@
+[submodule "ir-pipelines/ir-pell-accepts"]
+	path = ir-pipelines/ir-pell-accepts
+	url = https://github.com/sruddy1/ir-pell-accepts.git
