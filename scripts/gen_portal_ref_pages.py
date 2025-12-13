@@ -40,11 +40,7 @@ for pipeline in sorted(pipelines_root.iterdir()):
             full_doc_path = full_doc_path.with_name("index.md")
 
         # nav key includes pipeline name so multiple packages don't collide
-        # Avoid duplicate "ir-pell-accepts → ir_pell_accepts" levels in the sidebar:
-        # keep the pipeline name as the top level, but drop the package folder from the nav key.
-        parts_for_nav = parts[1:] if len(parts) > 1 else parts
-        nav[parts_for_nav] = full_doc_path.as_posix()
-        #nav[(pipeline.name,) + parts] = full_doc_path.as_posix()
+        nav[(pipeline.name,) + parts] = full_doc_path.as_posix()
 
         with mkdocs_gen_files.open(full_doc_path, "w") as fd:
             ident = ".".join(parts)
