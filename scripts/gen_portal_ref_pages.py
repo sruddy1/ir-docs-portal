@@ -1,0 +1,53 @@
+from pathlib import Path
+import mkdocs_gen_files
+
+nav = mkdocs_gen_files.Nav()
+
+root = Path(__file__).parent.parent
+pipelines_root = root / "ir-pipelines"
+
+SKIP_DIRS = {"tests", "test", "__pycache__"}
+
+for pipeline in sorted(pipelines_root.iterdir()):
+    if not pipeline.is_dir():
+        continue
+    src = pipeline / "src"
+    if not src.exists():
+        continue
+
+    # Find the top package folder under src (e.g., ir_pell_accepts)
+    pkgs = [p for p in src.iterdir() if p.is_dir() and (p / "__init__.py").exists()]
+    if not pkgs:
+        continue
+    pkg = pkgs[0]  # if you have multiple, we can expand this later
+
+    for path in sorted(src.rglob("*.py")):
+        if any(part in SKIP_DIRS for part in path.parts):
+            continue
+
+        module_path = path.relative_to(src).with_suffix("")          # ir_pell_accepts/foo
+        doc_path = path.relative_to(src).with_suffix(".md")          # ir_pell_accepts/foo.md
+
+        # Put everything under docs/pipelines/<pipeline>/reference/...
+        full_doc_path = Path("ir-pipelines", pipeline.name, "reference", doc_path)
+
+        parts = tuple(module_path.parts)
+        if parts[-1] == "__main__":
+            continue
+
+        if parts[-1] == "__init__":
+            parts = parts[:-1]
+            full_doc_path = full_doc_path.with_name("index.md")
+
+        # nav key includes pipeline name so multiple packages don't collide
+        nav[(pipeline.name,) + parts] = full_doc_path.as_posix()
+
+        with mkdocs_gen_files.open(full_doc_path, "w") as fd:
+            ident = ".".join(parts)
+            fd.write(f"::: {ident}\n")
+
+        mkdocs_gen_files.set_edit_path(full_doc_path, path.relative_to(root))
+
+# Root SUMMARY.md for the portal
+with mkdocs_gen_files.open("SUMMARY.md", "w") as nav_file:
+    nav_file.writelines(nav.build_literate_nav())
