@@ -1,3 +1,3 @@
 # UDIR Pipelines
 
-Select a pipeline from the left sidebar.
+Select a page from the left sidebar.
