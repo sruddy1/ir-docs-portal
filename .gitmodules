@@ -1,3 +1,6 @@
 [submodule "ir-pipelines/ir-pell-accepts"]
 	path = ir-pipelines/ir-pell-accepts
 	url = https://github.com/sruddy1/ir-pell-accepts.git
+[submodule "ir-pipelines/ir-team-exercise"]
+	path = ir-pipelines/ir-team-exercise
+	url = https://github.com/sruddy1/ir-team-exercise.git
