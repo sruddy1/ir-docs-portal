@@ -21,6 +21,7 @@ plugins:
         python:
           paths:
             - ir-pipelines/ir-pell-accepts/src
+            - ir-pipelines/ir-team-exercise/src
           options:
             show_source: false
             show_signature_annotations: true
@@ -29,5 +30,3 @@ plugins:
 nav:
   - Home: index.md
   - Pipelines: SUMMARY.md
-#  - Pipelines:
-#      - Pell Accepts: "!include ./ir-pipelines/ir-pell-accepts/mkdocs.yml"
