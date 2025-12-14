@@ -1,0 +1,1857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../initialize/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Running A Pipeline - UDIR Pipelines</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#run-an-existing-pipeline-stored-on-github" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UDIR Pipelines" class="md-header__button md-logo" aria-label="UDIR Pipelines" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UDIR Pipelines
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running A Pipeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UDIR Pipelines" class="md-nav__button md-logo" aria-label="UDIR Pipelines" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UDIR Pipelines
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running A Pipeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running A Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Configuration File
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update Configuration File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 0 — Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Open Visual Studio Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-the-pipeline-configuation-file-in-vsc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Open the Pipeline Configuation File in VSC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-change-file-paths-to-match-your-local-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Change file paths to match your local machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-save-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 4 — Save &amp; Close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-activate-the-python-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Activate the Python Virtual Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build &amp; Activate the Python Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-git-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Open Git Bash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-deactivate-existing-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Deactivate Existing Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Build the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-activate-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 4 — Activate the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-packages-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Packages into the Virtual Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Packages into the Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-external-python-packages-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Install External Python Packages into the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-the-pipeline-python-package-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Install the Pipeline Python Package into the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-the-virtual-environment-selectable-by-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Make the virtual environment selectable by Jupyter Notebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run the Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-results-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Results Folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Results Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-branch-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Push Branch to Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Push Branch to Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-branch-in-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Branch in the Future
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Branch in the Future">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="All Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Configuration File
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update Configuration File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 0 — Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Open Visual Studio Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-the-pipeline-configuation-file-in-vsc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Open the Pipeline Configuation File in VSC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-change-file-paths-to-match-your-local-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Change file paths to match your local machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-save-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 4 — Save &amp; Close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-activate-the-python-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Activate the Python Virtual Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build &amp; Activate the Python Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-git-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Open Git Bash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-deactivate-existing-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Deactivate Existing Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Build the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-activate-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 4 — Activate the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-packages-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Packages into the Virtual Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Packages into the Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-external-python-packages-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 1 — Install External Python Packages into the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-the-pipeline-python-package-into-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 2 — Install the Pipeline Python Package into the Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-the-virtual-environment-selectable-by-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STEP 3 — Make the virtual environment selectable by Jupyter Notebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run the Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-results-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Results Folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Results Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-branch-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Push Branch to Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Push Branch to Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-branch-in-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Branch in the Future
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Branch in the Future">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="All Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="run-an-existing-pipeline-stored-on-github">Run an Existing Pipeline Stored on GitHub</h1>
+<h4 id="_1"></h4>
+<h2 id="update-configuration-file">Update Configuration File</h2>
+<h4 id="_2"></h4>
+<blockquote>
+<h4 id="step-0-clone-the-repository">STEP 0 — Clone the Repository</h4>
+<blockquote>
+<ul>
+<li>
+<p>Open GitBash</p>
+</li>
+<li>
+<p><code>cd .../ir/ir-pipelines</code></p>
+</li>
+<li>
+<p>if you haven't cloned the repo yet: <code>git clone https://github.com/sruddy1/ir-team-exercise.git</code></p>
+</li>
+<li>
+<p><code>cd ir-team-exercise</code></p>
+</li>
+<li>
+<p><code>git checkout -b team-exercise/&lt;your-first-name&gt;</code></p>
+</li>
+<li>
+<p>Creates a <strong><em>branch</em></strong> in Github, which is essentially your own copy of the repo.</p>
+</li>
+<li>Disconnects your changes from the root repo, referred to as "main" or "master"</li>
+<li>Allows changes to be made and pushed to Github without updating "main".</li>
+<li>Prevents conflicts between users who are using separate branches. </li>
+</ul>
+</blockquote>
+<h4 id="step-1-open-visual-studio-code">STEP 1 — Open Visual Studio Code</h4>
+<h4 id="_3"></h4>
+<h4 id="step-2-open-the-pipeline-configuation-file-in-vsc">STEP 2 — Open the Pipeline Configuation File in VSC</h4>
+<blockquote>
+<ul>
+<li>
+<p>Click <code>File</code> &gt; <code>Open File</code></p>
+</li>
+<li>
+<p>Navigate to <code>C:\Users\&lt;username&gt;\ir\ir-pipelines\ir-team-exercise\configs\config.yaml</code></p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_4"></h4>
+<h4 id="step-3-change-file-paths-to-match-your-local-machine">STEP 3 — Change file paths to match your local machine</h4>
+<blockquote>
+<ul>
+<li><strong>name</strong>: 'First name'</li>
+<li><strong>box_root</strong>: C:/Users/<code>&lt;username&gt;</code>/Box</li>
+</ul>
+</blockquote>
+<h4 id="_5"></h4>
+<h4 id="step-4-save-close">STEP 4 — Save &amp; Close</h4>
+</blockquote>
+<h4 id="_6"></h4>
+<h2 id="build-activate-the-python-virtual-environment">Build &amp; Activate the Python Virtual Environment</h2>
+<h4 id="_7"></h4>
+<blockquote>
+<h4 id="step-1-open-git-bash">STEP 1 — Open Git Bash</h4>
+<h4 id="_8"></h4>
+<h4 id="step-2-deactivate-existing-environment">STEP 2 — Deactivate Existing Environment</h4>
+<blockquote>
+<ul>
+<li><code>deactivate</code></li>
+<li>a <code>deactivate: command not found</code> is good!</li>
+<li>if the error does not appear that's also good, and it means you had an environment active that is now deactivated.</li>
+</ul>
+</blockquote>
+<h4 id="_9"></h4>
+<h4 id="step-3-build-the-virtual-environment">STEP 3 — Build the Virtual Environment</h4>
+<blockquote>
+<ul>
+<li>
+<p><code>cd C:/Users/&lt;username&gt;/ir/ir-pipelines/ir-team-exercise</code></p>
+</li>
+<li>
+<p><code>python -m venv .venv</code></p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_10"></h4>
+<h4 id="step-4-activate-the-virtual-environment">STEP 4 — Activate the Virtual Environment</h4>
+<blockquote>
+<ul>
+<li>
+<p><code>source .venv/Scripts/activate</code></p>
+</li>
+<li>
+<p>This loads the python version used to build the pipeline.
+</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h4 id="_11"></h4>
+<h2 id="install-packages-into-the-virtual-environment">Install Packages into the Virtual Environment</h2>
+<h4 id="_12"></h4>
+<blockquote>
+<h4 id="step-1-install-external-python-packages-into-the-virtual-environment">STEP 1 — Install External Python Packages into the Virtual Environment</h4>
+<blockquote>
+<ul>
+<li>
+<p><code>pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p><code>requirements.txt</code> contains a list of packages along with their version numbers used to build the pipeline.</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_13"></h4>
+<h4 id="step-2-install-the-pipeline-python-package-into-the-virtual-environment">STEP 2 — Install the Pipeline Python Package into the Virtual Environment</h4>
+<blockquote>
+<ul>
+<li>
+<p><code>pip install -e .</code></p>
+</li>
+<li>
+<p>This installs all the <code>*.py</code> files contained in <code>./src/ir_team_exercise</code> as a python package inside the virtual environment</p>
+</li>
+<li>
+<p>Allows you to access the functions inside python scripts, e.g. if you want to use the function 'validate_columns' contained inside <code>./src/ir_team_exercise/checks.py</code> then you would add this to your python script:</p>
+</li>
+</ul>
+<p><code>from ir_team_exercise.checks import validate_columns</code></p>
+</blockquote>
+<h4 id="_14"></h4>
+<h4 id="step-3-make-the-virtual-environment-selectable-by-jupyter-notebook">STEP 3 — Make the virtual environment selectable by Jupyter Notebook</h4>
+<blockquote>
+<ul>
+<li><code>python -m ipykernel install --user --name=myenv --display-name "ir-team-exercise"</code></li>
+</ul>
+</blockquote>
+<h4 id="_15"></h4>
+</blockquote>
+<h4 id="_16"></h4>
+<h2 id="run-the-pipeline">Run the Pipeline</h2>
+<h4 id="_17"></h4>
+<blockquote>
+<ul>
+<li>
+<p><code>python run.py</code></p>
+</li>
+<li>
+<p><code>deactivate</code>
+</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_18"></h4>
+<h2 id="check-results-folder">Check Results Folder</h2>
+<h4 id="_19"></h4>
+<blockquote>
+<ul>
+<li>Use File Explorer to navigate to <code>C:\Users\&lt;username&gt;\Box\Inst Res Collab\Team Retreat Pipeline Results\&lt;First Name&gt;</code> and confirm the pipeline successfully output the results file.</li>
+</ul>
+</blockquote>
+<h4 id="_20"></h4>
+<h2 id="push-branch-to-github">Push Branch to Github</h2>
+<h4 id="_21"></h4>
+<blockquote>
+<ul>
+<li>
+<p><code>git status</code> : see what files have been changed locally</p>
+</li>
+<li>
+<p><code>git add .</code> : add all changed files to the commit</p>
+<blockquote>
+<ul>
+<li>Ignore <code>LF will be replaced by CRLF...</code> warning.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>git commit -m "Successfully ran pipeline"</code> : collect changes into a commit</p>
+</li>
+<li>
+<p><code>git push -u origin team-exercise/&lt;name&gt;</code> : push commit to the github branch of the repo (this does not change the main repo)</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_22"></h4>
+<h2 id="run-branch-in-the-future">Run Branch in the Future</h2>
+<h4 id="_23"></h4>
+<blockquote>
+<ul>
+<li>Open Git Bash</li>
+<li><code>cd C:/Users/&lt;username&gt;/ir/ir-pipelines/ir-team-exercise</code> : Navigate to the repo on your local machine.</li>
+<li><code>git checkout team-exercise/&lt;name&gt;</code> : if the analysis hasn't been updated, otherwise git checkout a new branch from main as done previously</li>
+<li>Then,<blockquote>
+<ul>
+<li>Update Config File if needed.</li>
+<li>Build environment (only if you haven't previously)</li>
+<li>Activate environment</li>
+<li>Install External Packages (only if requirements have changed since last build)</li>
+<li>Install Pipeline Package (only if changes have been made to the src/ .py files</li>
+<li>Run Pipeline</li>
+<li>Deactivate Environment</li>
+<li>git add &gt; commit &gt; push changes (if you want to keep a record of any changes to tracked files)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h4 id="_24"></h4>
+<h2 id="all-commands">All Commands</h2>
+<h4 id="_25"></h4>
+<blockquote>
+<ul>
+<li>
+<p>Open Git Bash</p>
+</li>
+<li>
+<p>if repo not currently on local machine</p>
+<blockquote>
+<ul>
+<li><code>git clone https://github.com/&lt;github-account-name&gt;/&lt;name-of-repo&gt;.git</code></li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>cd &lt;path-to-repo&gt;/&lt;name-of-repo&gt;</code></p>
+</li>
+<li>
+<p><code>git checkout main</code> : necessary in case your local repo is linked to an existing branch.</p>
+</li>
+<li>
+<p><code>git checkout -b &lt;branch-folder&gt;/&lt;branch-name&gt;</code></p>
+</li>
+<li>
+<p>Update config file using VSC located here: <code>&lt;name-of-repo&gt;/configs/config.yaml</code></p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Make sure all the directories that are referenced in the config file exist.</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><code>python -m venv .venv</code> : only run if you haven't already created the .venv folder</p>
+</li>
+<li>
+<p><code>source .venv/Scripts/activate</code> </p>
+</li>
+<li>
+<p><code>pip install -r requirements.txt</code> : run only if new requirements were added since the last time you built the virtual env</p>
+</li>
+<li>
+<p><code>pip install -e .</code> : run everytime you make changes to the <code>*.py</code> files in src</p>
+</li>
+<li>
+<p><code>python run.py</code></p>
+</li>
+<li>
+<p><code>deactivate</code></p>
+</li>
+<li>
+<p><code>git add .</code></p>
+</li>
+<li>
+<p><code>git commit -m "Type informative message"</code></p>
+</li>
+<li>
+<p><code>git push -u origin &lt;branch-folder&gt;/&lt;branch-name&gt;</code>
+</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_26"></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
