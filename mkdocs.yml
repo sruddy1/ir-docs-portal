@@ -29,4 +29,5 @@ plugins:
 
 nav:
   - Home: index.md
+  - Software: software.md
   - Pipelines: SUMMARY.md
