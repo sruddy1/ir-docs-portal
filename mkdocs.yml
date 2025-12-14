@@ -31,4 +31,6 @@ nav:
   - Home: index.md
   - Pipelines: SUMMARY.md
   - Software: software.md
+  - Initial Steps: initialize.md
+  - Running A Pipeline: run_pipeline.md
   
