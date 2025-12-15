@@ -32,7 +32,9 @@ nav:
   - Home: index.md
   - Pipelines: SUMMARY.md
   - Software: software.md
-  - Initial Steps: initialize.md
-  - Running A Pipeline: run_pipeline.md
+  - Initialize Software: initialize.md
+  - Run A Pipeline: run_pipeline.md
+  - Add New Submodule: add_new_submodule.md
   - Update Submodules: update_submodules.md
+  - Add New Documentation: add_new_documentation.md 
   
