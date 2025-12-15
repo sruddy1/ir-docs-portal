@@ -357,6 +357,162 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        convert_year_to_cohort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="convert_year_to_cohort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort--subtract-offset-number-of-years-from-the-year-provided" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtract 'offset' number of years from the year provided
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtract &#39;offset&#39; number of years from the year provided">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_cohort--_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        convert_year_to_term
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="convert_year_to_term">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term--subtract-offset-number-of-years-from-the-year-provided-and-add-a-term-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtract 'offset' number of years from the year provided and add a term label.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtract &#39;offset&#39; number of years from the year provided and add a term label.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ir_enrollment_projection.helper.convert_year_to_term--_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -402,6 +558,113 @@
 
 
 
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="ir_enrollment_projection.helper.convert_year_to_cohort" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">convert_year_to_cohort</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--subtract-offset-number-of-years-from-the-year-provided">Subtract 'offset' number of years from the year provided</h3>
+<pre><code>Used as a helper to other functions and is defined in the contexts
+of those functions. Purpose is to return the cohort year based 
+on the reporting year. For example, if the reporting year is 2026 and
+one is interested in the most recent 2nd-year retention then the 
+cohort year of interest is '2024'.
+</code></pre>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--parameters">Parameters</h4>
+<blockquote>
+<p>year : string</p>
+</blockquote>
+<pre><code>The reporting year, e.g. '2026'
+</code></pre>
+<blockquote>
+<p>offset : integer</p>
+</blockquote>
+<pre><code>How many years to subtract.
+</code></pre>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--returns">Returns</h4>
+<blockquote>
+<p>string </p>
+</blockquote>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--example">Example</h4>
+<blockquote>
+<p>year = '2026'</p>
+<p>offset = 2</p>
+</blockquote>
+<pre><code>return
+
+    '2024'
+</code></pre>
+<h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--_1"></h3>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="ir_enrollment_projection.helper.convert_year_to_term" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">convert_year_to_term</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;80&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <h3 id="ir_enrollment_projection.helper.convert_year_to_term--subtract-offset-number-of-years-from-the-year-provided-and-add-a-term-label">Subtract 'offset' number of years from the year provided and add a term label.</h3>
+<pre><code>Used as a helper to other functions and is defined in the contexts
+of those functions. Purpose is to return the cohort term based
+on the reporting year. For example, if the reporting year is 2026 and
+one is interested in the most recent 2nd-year retention then the 
+cohort term is '202480'.
+</code></pre>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--parameters">Parameters</h4>
+<blockquote>
+<p>year : string</p>
+</blockquote>
+<pre><code>The reporting year, e.g. '2026'
+</code></pre>
+<blockquote>
+<p>offset : integer</p>
+</blockquote>
+<pre><code>How many years to subtract.
+</code></pre>
+<blockquote>
+<p>term : string</p>
+<blockquote>
+<p>default : "80"</p>
+</blockquote>
+</blockquote>
+<pre><code>The term designator of the cohort of interest
+</code></pre>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--returns">Returns</h4>
+<blockquote>
+<p>string </p>
+</blockquote>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--example">Example</h4>
+<blockquote>
+<p>year = '2026'</p>
+<p>offset = 2</p>
+<p>term = "80"</p>
+</blockquote>
+<pre><code>return
+
+    '202480'
+</code></pre>
+<h3 id="ir_enrollment_projection.helper.convert_year_to_term--_1"></h3>
+
+
+    </div>
+
+</div>
 
 
 
