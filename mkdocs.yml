@@ -34,4 +34,5 @@ nav:
   - Software: software.md
   - Initial Steps: initialize.md
   - Running A Pipeline: run_pipeline.md
+  - Update Submodules: update_submodules.md
   
