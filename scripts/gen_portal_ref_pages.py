@@ -10,6 +10,7 @@ SKIP_DIRS = {"tests", "test", "__pycache__"}
 PIPELINE_LABELS = {
     "ir-pell-accepts": "Pell Accepts",
     "ir-team-exercise": "Team Exercise",
+    "ir-enrollment-projection": "Enrollment Projection"
  }
 
 for pipeline in sorted(pipelines_root.iterdir()):

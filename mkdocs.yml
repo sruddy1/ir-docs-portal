@@ -22,6 +22,7 @@ plugins:
           paths:
             - ir-pipelines/ir-pell-accepts/src
             - ir-pipelines/ir-team-exercise/src
+            - ir-pipelines/ir-enrollment-projection/src
           options:
             show_source: false
             show_signature_annotations: true
