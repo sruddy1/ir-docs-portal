@@ -4,3 +4,6 @@
 [submodule "ir-pipelines/ir-team-exercise"]
 	path = ir-pipelines/ir-team-exercise
 	url = https://github.com/sruddy1/ir-team-exercise.git
+[submodule "ir-pipelines/ir-enrollment-projection"]
+	path = ir-pipelines/ir-enrollment-projection
+	url = https://github.com/sruddy1/ir-enrollment-projection.git
