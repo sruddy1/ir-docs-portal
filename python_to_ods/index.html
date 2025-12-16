@@ -734,8 +734,8 @@
 
 
 
-<h1 id="connecting-to-ods-via-python">Connecting to ODS via Python</h1>
-<h2 id="step-1-install-python-packages">Step 1: Install python packages</h2>
+<h1 id="connecting-to-ods-via-python">Connecting to ODS via Python<a class="headerlink" href="#connecting-to-ods-via-python" title="Permanent link">&para;</a></h1>
+<h2 id="step-1-install-python-packages">Step 1: Install python packages<a class="headerlink" href="#step-1-install-python-packages" title="Permanent link">&para;</a></h2>
 <blockquote>
 <ul>
 <li>Open up GitBash</li>
@@ -743,8 +743,8 @@
 <li><code>pip install sqlalchemy oracledb</code></li>
 </ul>
 </blockquote>
-<h4 id="_1"></h4>
-<h2 id="step-2-set-up-connection-in-python">Step 2: Set up Connection in Python</h2>
+<h4 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h2 id="step-2-set-up-connection-in-python">Step 2: Set up Connection in Python<a class="headerlink" href="#step-2-set-up-connection-in-python" title="Permanent link">&para;</a></h2>
 <blockquote>
 <ul>
 <li>
@@ -759,64 +759,65 @@
 </li>
 <li>
 <p>Set up Connection by copy-pasting the following python code
-```python
-from sqlalchemy import create_engine</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">USER</span> <span class="o">=</span> <span class="s2">&quot;ud_tableau_read&quot;</span>
+<span class="n">PWD</span>  <span class="o">=</span> <span class="o">&lt;</span><span class="n">password</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Keeper</span><span class="o">&gt;</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;ban-odsp-db1.servers.udayton.edu&quot;</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">1521</span>
+<span class="n">SERVICE</span> <span class="o">=</span> <span class="s2">&quot;odsp.servers.udayton.edu&quot;</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+   <span class="sa">f</span><span class="s2">&quot;oracle+oracledb://</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PWD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">/?service_name=</span><span class="si">{</span><span class="n">SERVICE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</code></pre></div></p>
 </li>
 </ul>
-<p>USER = "ud_tableau_read"
-PWD  = <password from Keeper>
-HOST = "ban-odsp-db1.servers.udayton.edu"
-PORT = 1521
-SERVICE = "odsp.servers.udayton.edu"</p>
-<p>engine = create_engine(
-   f"oracle+oracledb://{USER}:{PWD}@{HOST}:{PORT}/?service_name={SERVICE}"
-)
-```</p>
 </blockquote>
-<h4 id="_2"></h4>
-<h2 id="step-3-write-a-sql-command">Step 3: Write a SQL Command</h2>
+<h4 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h2 id="step-3-write-a-sql-command">Step 3: Write a SQL Command<a class="headerlink" href="#step-3-write-a-sql-command" title="Permanent link">&para;</a></h2>
 <blockquote>
 <ul>
 <li>
 <p>SQL in Python looks like
-<code>python
-sql = """
-SELECT &lt;...&gt;
-FROM &lt;schema&gt;.&lt;table&gt;
-&lt;...&gt;
-"""</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT &lt;...&gt;</span>
+<span class="s2">FROM &lt;schema&gt;.&lt;table&gt;</span>
+<span class="s2">&lt;...&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div></p>
 </li>
 <li>
 <p>Execute SQL command with the engine via pandas
-<code>python
-df = pd.read_sql(sql, engine)</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
 </ul>
-<h4 id="_3"></h4>
+<h4 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>Examples</p>
 <ul>
 <li>Load UD_STUDENT_COURSE
-```python
-sql = """
-SELECT *
-FROM UD_STUDENT.UD_STUDENT_COURSE
-"""</li>
+<div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT *</span>
+<span class="s2">FROM UD_STUDENT.UD_STUDENT_COURSE</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">df_enrl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+</code></pre></div></li>
 </ul>
-<p>df_enrl = pd.read_sql(sql, engine)
-```</p>
-<h4 id="_4"></h4>
+<h4 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>List all Schemas
-<code>python
-sql = """
-SELECT DISTINCT owner
-FROM all_tab_columns
-ORDER BY owner
-"""
-df_schemas = pd.read_sql(sql, engine)
-df_schemas</code></li>
+<div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT DISTINCT owner</span>
+<span class="s2">FROM all_tab_columns</span>
+<span class="s2">ORDER BY owner</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">df_schemas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df_schemas</span>
+</code></pre></div></li>
 </ul>
-<h4 id="_5"></h4>
+<h4 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>List all tables in the UD_STUDENT schema
 ```python

@@ -593,53 +593,57 @@
 
 
 <h2 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">count_second_year_return_by_college</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acad_year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></code>
+            <code class=" language-python"><span class="n">count_second_year_return_by_college</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acad_year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></code>
 
-</h2>
+<a href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--calculate-fall-cohort-headcount-by-school-and-university">Calculate Fall cohort headcount by school and university:</h3>
-<pre><code>1. Cohort size
+        <h3 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--calculate-fall-cohort-headcount-by-school-and-university">Calculate Fall cohort headcount by school and university:<a class="headerlink" href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college--calculate-fall-cohort-headcount-by-school-and-university" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Cohort</span><span class="w"> </span><span class="n">size</span>
 
-2. 1st-Term enrollment headcount
+<span class="mf">2.</span><span class="w"> </span><span class="mf">1</span><span class="n">st</span><span class="o">-</span><span class="n">Term</span><span class="w"> </span><span class="n">enrollment</span><span class="w"> </span><span class="n">headcount</span>
 
-3. 2nd-Term enrollment headcount
-</code></pre>
-<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--parameters">Parameters</h4>
+<span class="mf">3.</span><span class="w"> </span><span class="mf">2</span><span class="n">nd</span><span class="o">-</span><span class="n">Term</span><span class="w"> </span><span class="n">enrollment</span><span class="w"> </span><span class="n">headcount</span>
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--parameters">Parameters<a class="headerlink" href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>df : pandas DataFrame</p>
 </blockquote>
-<pre><code>Composite of several raw tables from academic study
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Composite of several raw tables from academic study
+</code></pre></div>
+
 <blockquote>
 <p>acad_year : string</p>
 </blockquote>
-<pre><code>The 4-digit reporting year. Ex: '2026'
-If reporting year is Y, then the fall cohort year is Y-2
-and the 2nd-term year is Y-1.
+<div class="codehilite"><pre><span></span><code><span class="nx">The</span><span class="w"> </span><span class="mi">4</span><span class="o">-</span><span class="nx">digit</span><span class="w"> </span><span class="nx">reporting</span><span class="w"> </span><span class="nx">year</span><span class="p">.</span><span class="w"> </span><span class="nx">Ex</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026</span><span class="err">&#39;</span>
+<span class="nx">If</span><span class="w"> </span><span class="nx">reporting</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">Y</span><span class="p">,</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">fall</span><span class="w"> </span><span class="nx">cohort</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">Y</span><span class="o">-</span><span class="mi">2</span>
+<span class="k">and</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="mi">2</span><span class="nx">nd</span><span class="o">-</span><span class="nx">term</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">Y</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span>
 
-Ex: acad_year = '2026' implies Fall 2024 cohort 
-and the 2nd-term = Fall 2025
-</code></pre>
+<span class="nx">Ex</span><span class="p">:</span><span class="w"> </span><span class="nx">acad_year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026</span><span class="err">&#39;</span><span class="w"> </span><span class="nx">implies</span><span class="w"> </span><span class="nx">Fall</span><span class="w"> </span><span class="mi">2024</span><span class="w"> </span><span class="nx">cohort</span><span class="w"> </span>
+<span class="k">and</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="mi">2</span><span class="nx">nd</span><span class="o">-</span><span class="nx">term</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Fall</span><span class="w"> </span><span class="mi">2025</span>
+</code></pre></div>
+
 <blockquote>
 <p>cohort_type : string </p>
 <blockquote>
 <p>default : None</p>
 </blockquote>
 </blockquote>
-<pre><code>Values from 'Cohort Type Desc' column in the 
-'Undergraduate Retention and Graduation' file. 
+<div class="codehilite"><pre><span></span><code>Values from &#39;Cohort Type Desc&#39; column in the 
+&#39;Undergraduate Retention and Graduation&#39; file. 
 In other words, 1 of the 8 cohort groups in its expanded format.
 
-Ex: 'Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--returns">Returns</h4>
+Ex: &#39;Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--returns">Returns<a class="headerlink" href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>pandas DataFrame</p>
 </blockquote>
-<pre><code>Per-cell headcount totals
+<div class="codehilite"><pre><span></span><code>Per-cell headcount totals
 
 with 3 columns:
 
@@ -652,17 +656,19 @@ and 6 rows:
     1-4. The 4 schools
     5. No college designated
     6. University
-</code></pre>
-<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--example">Example</h4>
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--example">Example<a class="headerlink" href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>acad_year = '2026'</p>
 <p>cohort_type = 'Fall, First-Time, Full-Time'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    dataframe of positive integer counts per cell
-</code></pre>
-<h3 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--_1"></h3>
+<span class="w">    </span><span class="nv">dataframe</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">positive</span><span class="w"> </span><span class="nv">integer</span><span class="w"> </span><span class="nv">counts</span><span class="w"> </span><span class="nv">per</span><span class="w"> </span><span class="nv">cell</span>
+</code></pre></div>
+
+<h3 id="ir_enrollment_projection.tabulations.count_second_year_return_by_college--_1"><a class="headerlink" href="#ir_enrollment_projection.tabulations.count_second_year_return_by_college--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>

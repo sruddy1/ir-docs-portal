@@ -671,61 +671,67 @@
 
 
 <h2 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">generate_ipeds_table_for_carol</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acad_year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+            <code class=" language-python"><span class="n">generate_ipeds_table_for_carol</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acad_year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
-</h2>
+<a href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--generate-a-table-of-student-ids-for-students-cohorted-into-any-term-of-the-provided-academic-year">Generate a table of student IDs for students cohorted into any term of the provided academic year.</h3>
-<pre><code>This is for Carol to add two flags:
+        <h3 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--generate-a-table-of-student-ids-for-students-cohorted-into-any-term-of-the-provided-academic-year">Generate a table of student IDs for students cohorted into any term of the provided academic year.<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--generate-a-table-of-student-ids-for-students-cohorted-into-any-term-of-the-provided-academic-year" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">This</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">Carol</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">add</span><span class="w"> </span><span class="nv">two</span><span class="w"> </span><span class="nv">flags</span>:
 
-    1. Pell recipient.
+<span class="w">    </span><span class="mi">1</span>.<span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">recipient</span>.
 
-    2. Stafford or Direct Subsidized Loan recipient.
+<span class="w">    </span><span class="mi">2</span>.<span class="w"> </span><span class="nv">Stafford</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">Direct</span><span class="w"> </span><span class="nv">Subsidized</span><span class="w"> </span><span class="nv">Loan</span><span class="w"> </span><span class="nv">recipient</span>.
 
-This is being used for the ATI-Kessler report.
+<span class="nv">This</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">being</span><span class="w"> </span><span class="nv">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">ATI</span><span class="o">-</span><span class="nv">Kessler</span><span class="w"> </span><span class="nv">report</span>.
 
-The file name is created inside the function.
+<span class="nv">The</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">created</span><span class="w"> </span><span class="nv">inside</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">function</span>.
 
-Only necessary columns are output.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--parameters">Parameters</h4>
+<span class="nv">Only</span><span class="w"> </span><span class="nv">necessary</span><span class="w"> </span><span class="nv">columns</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">output</span>.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>acad_year : string</p>
 </blockquote>
-<pre><code>Academic year, e.g., '2025-2026'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic year, e.g., &#39;2025-2026&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>outpath : string or Path object</p>
 </blockquote>
-<pre><code>Folder where the table is to be saved.
-Do not include a file name.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code><span class="nv">Folder</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">saved</span>.
+<span class="k">Do</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="k">include</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">name</span>.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--returns">Returns<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>None</p>
 </blockquote>
-<pre><code>Nothing is returned.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Nothing is returned.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--example">Example<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>outpath = '/c/Users/sruddy1'</p>
 </blockquote>
-<pre><code>result
+<div class="codehilite"><pre><span></span><code>result
 
     Output filtered table to
 
-        '/c/Users/sruddy1/2025-2026 All-Cohorts Student IDs from Undergraduate Retention and Graduation.xlsx'
-</code></pre>
-<h3 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--_1"></h3>
+        &#39;/c/Users/sruddy1/2025-2026 All-Cohorts Student IDs from Undergraduate Retention and Graduation.xlsx&#39;
+</code></pre></div>
+
+<h3 id="ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--_1"><a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_ipeds_table_for_carol--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -736,61 +742,67 @@ Do not include a file name.
 
 
 <h2 id="ir_team_exercise.tables_for_carol.generate_table_for_carol" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">generate_table_for_carol</span><span class="p">(</span><span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+            <code class=" language-python"><span class="n">generate_table_for_carol</span><span class="p">(</span><span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
-</h2>
+<a href="#ir_team_exercise.tables_for_carol.generate_table_for_carol" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--generate-a-table-of-student-ids-for-all-enrolled-students-for-the-given-academic-period-and-output-as-an-excel-file">Generate a table of student IDs for all enrolled students for the given academic period, and output as an excel file.</h3>
-<pre><code>This is for Carol to add two flags:
+        <h3 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--generate-a-table-of-student-ids-for-all-enrolled-students-for-the-given-academic-period-and-output-as-an-excel-file">Generate a table of student IDs for all enrolled students for the given academic period, and output as an excel file.<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_table_for_carol--generate-a-table-of-student-ids-for-all-enrolled-students-for-the-given-academic-period-and-output-as-an-excel-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">This</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">Carol</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">add</span><span class="w"> </span><span class="nv">two</span><span class="w"> </span><span class="nv">flags</span>:
 
-    1. Pell recipient
+<span class="w">    </span><span class="mi">1</span>.<span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">recipient</span>
 
-    2. First generation
+<span class="w">    </span><span class="mi">2</span>.<span class="w"> </span><span class="nv">First</span><span class="w"> </span><span class="nv">generation</span>
 
-This is being used for the ATI-Kessler report.
+<span class="nv">This</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">being</span><span class="w"> </span><span class="nv">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">ATI</span><span class="o">-</span><span class="nv">Kessler</span><span class="w"> </span><span class="nv">report</span>.
 
-The file name is created inside the function.
+<span class="nv">The</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">created</span><span class="w"> </span><span class="nv">inside</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">function</span>.
 
-Only necessary columns are output.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--parameters">Parameters</h4>
+<span class="nv">Only</span><span class="w"> </span><span class="nv">necessary</span><span class="w"> </span><span class="nv">columns</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">output</span>.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_table_for_carol--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfe : pandas DataFrame</p>
 </blockquote>
-<pre><code>Census Date Enrollment table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Census Date Enrollment table.
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>outpath : string or Path object</p>
 </blockquote>
-<pre><code>Folder where the table is to be saved.
-Do not include a file name.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code><span class="nv">Folder</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">saved</span>.
+<span class="k">Do</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="k">include</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">name</span>.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--returns">Returns<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_table_for_carol--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>None</p>
 </blockquote>
-<pre><code>Nothing is returned.
-</code></pre>
-<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Nothing is returned.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--example">Example<a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_table_for_carol--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>outpath = '/c/Users/sruddy1'</p>
 </blockquote>
-<pre><code>result
+<div class="codehilite"><pre><span></span><code>result
 
     Output filtered table to
 
-        '/c/Users/sruddy1/Fall 2025 Enrolled Full-Time Student IDs from Census Data Enrollment.xlsx'
-</code></pre>
-<h3 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--_1"></h3>
+        &#39;/c/Users/sruddy1/Fall 2025 Enrolled Full-Time Student IDs from Census Data Enrollment.xlsx&#39;
+</code></pre></div>
+
+<h3 id="ir_team_exercise.tables_for_carol.generate_table_for_carol--_1"><a class="headerlink" href="#ir_team_exercise.tables_for_carol.generate_table_for_carol--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>

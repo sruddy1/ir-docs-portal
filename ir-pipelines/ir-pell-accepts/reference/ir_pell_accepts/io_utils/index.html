@@ -738,56 +738,62 @@
 
 
 <h2 id="ir_pell_accepts.io_utils.construct_results_filename" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">construct_results_filename</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">append_today</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">append_version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span></code>
+            <code class=" language-python"><span class="n">construct_results_filename</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">append_today</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">append_version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span></code>
 
-</h2>
+<a href="#ir_pell_accepts.io_utils.construct_results_filename" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_pell_accepts.io_utils.construct_results_filename--modifies-the-file-name-for-the-results-file-and-returns-it-as-a-path-object">Modifies the file name for the results file and returns it as a Path object.</h3>
-<pre><code>(default) Optionally appends today's date and 
-pipeline package version.
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.construct_results_filename--parameters">Parameters</h4>
+        <h3 id="ir_pell_accepts.io_utils.construct_results_filename--modifies-the-file-name-for-the-results-file-and-returns-it-as-a-path-object">Modifies the file name for the results file and returns it as a Path object.<a class="headerlink" href="#ir_pell_accepts.io_utils.construct_results_filename--modifies-the-file-name-for-the-results-file-and-returns-it-as-a-path-object" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="w"> </span><span class="nx">Optionally</span><span class="w"> </span><span class="nx">appends</span><span class="w"> </span><span class="nx">today</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="k">and</span><span class="w"> </span>
+<span class="nx">pipeline</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">version</span><span class="p">.</span>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.construct_results_filename--parameters">Parameters<a class="headerlink" href="#ir_pell_accepts.io_utils.construct_results_filename--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>file : string or Path object</p>
 </blockquote>
-<pre><code>The file name including extension. Do not include its path.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">The</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">including</span><span class="w"> </span><span class="nv">extension</span>.<span class="w"> </span><span class="k">Do</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="k">include</span><span class="w"> </span><span class="nv">its</span><span class="w"> </span><span class="nv">path</span>.
+</code></pre></div>
+
 <blockquote>
 <p>append_today : boolean (True/False)</p>
 <blockquote>
 <p>default = True</p>
 </blockquote>
 </blockquote>
-<pre><code>Append today's date to the file name in the format mm-dd-yyyy
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Append today&#39;s date to the file name in the format mm-dd-yyyy
+</code></pre></div>
+
 <blockquote>
 <p>append_version : boolean (True/False)</p>
 <blockquote>
 <p>default = True</p>
 </blockquote>
 </blockquote>
-<pre><code>Append the version of the pipeline python package used to the file name, e.g. 'v0-1-0'
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.construct_results_filename--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code><span class="nx">Append</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">v0</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.construct_results_filename--returns">Returns<a class="headerlink" href="#ir_pell_accepts.io_utils.construct_results_filename--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Path object</p>
 </blockquote>
-<pre><code>A modified file name as a Path object.
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.construct_results_filename--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>A modified file name as a Path object.
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.construct_results_filename--example">Example<a class="headerlink" href="#ir_pell_accepts.io_utils.construct_results_filename--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>file = 'my_file.xlsx'</p>
 <p>append_today = True</p>
 <p>append_version = True</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code>return
 
-    'my_file_12-13-2025_v0-3-2.xlsx'
-</code></pre>
-<h3 id="ir_pell_accepts.io_utils.construct_results_filename--_1"></h3>
+    &#39;my_file_12-13-2025_v0-3-2.xlsx&#39;
+</code></pre></div>
+
+<h3 id="ir_pell_accepts.io_utils.construct_results_filename--_1"><a class="headerlink" href="#ir_pell_accepts.io_utils.construct_results_filename--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -798,43 +804,46 @@ pipeline package version.
 
 
 <h2 id="ir_pell_accepts.io_utils.infer_and_read_file" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">infer_and_read_file</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></code>
+            <code class=" language-python"><span class="n">infer_and_read_file</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></code>
 
-</h2>
+<a href="#ir_pell_accepts.io_utils.infer_and_read_file" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_pell_accepts.io_utils.infer_and_read_file--infers-file-type-and-reads-into-a-pandas-dataframe">Infers file type and reads into a pandas DataFrame.</h3>
-<pre><code>All columns are converted to strings.
+        <h3 id="ir_pell_accepts.io_utils.infer_and_read_file--infers-file-type-and-reads-into-a-pandas-dataframe">Infers file type and reads into a pandas DataFrame.<a class="headerlink" href="#ir_pell_accepts.io_utils.infer_and_read_file--infers-file-type-and-reads-into-a-pandas-dataframe" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">All</span><span class="w"> </span><span class="nx">columns</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">converted</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span>
 
-Supported file types: .xlsx, .csv, and .txt
+<span class="nx">Supported</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">types</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="nx">xlsx</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="nx">csv</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">.</span><span class="nx">txt</span>
 
-Raises FileNotFoundError() if file does not exist
+<span class="nx">Raises</span><span class="w"> </span><span class="nx">FileNotFoundError</span><span class="p">()</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">exist</span>
 
-Raises ValueError() if not one of the supported file types.
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.infer_and_read_file--parameters">Parameters</h4>
+<span class="nx">Raises</span><span class="w"> </span><span class="nx">ValueError</span><span class="p">()</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">one</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">supported</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.infer_and_read_file--parameters">Parameters<a class="headerlink" href="#ir_pell_accepts.io_utils.infer_and_read_file--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>file : string or Path object</p>
 </blockquote>
-<pre><code>Path to file.
+<div class="codehilite"><pre><span></span><code>Path to file.
 
-Ex: '/c/Users/sruddy1/my_file.xlsx'
+Ex: &#39;/c/Users/sruddy1/my_file.xlsx&#39;
 
-Ex: r'C:\Users\sruddy1\my_file.xlsx'
+Ex: r&#39;C:\Users\sruddy1\my_file.xlsx&#39;
 
-Ex: Path('/c/Users/sruddy1/my_file.xlsx')
+Ex: Path(&#39;/c/Users/sruddy1/my_file.xlsx&#39;)
 
-Ex: Path(r'C:\Users\sruddy1\my_file.xlsx')
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.infer_and_read_file--returns">Returns</h4>
+Ex: Path(r&#39;C:\Users\sruddy1\my_file.xlsx&#39;)
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.infer_and_read_file--returns">Returns<a class="headerlink" href="#ir_pell_accepts.io_utils.infer_and_read_file--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>pandas DataFrame</p>
 </blockquote>
-<pre><code>The loaded data with all columns converted to strings.
-</code></pre>
-<h3 id="ir_pell_accepts.io_utils.infer_and_read_file--_1"></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">loaded</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="n">converted</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">strings</span><span class="o">.</span>
+</code></pre></div>
+
+<h3 id="ir_pell_accepts.io_utils.infer_and_read_file--_1"><a class="headerlink" href="#ir_pell_accepts.io_utils.infer_and_read_file--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -845,66 +854,73 @@ Ex: Path(r'C:\Users\sruddy1\my_file.xlsx')
 
 
 <h2 id="ir_pell_accepts.io_utils.output_results" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">output_results</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">append_today</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">append_version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+            <code class=" language-python"><span class="n">output_results</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">append_today</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">append_version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
-</h2>
+<a href="#ir_pell_accepts.io_utils.output_results" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_pell_accepts.io_utils.output_results--output-results-to-the-provided-file">Output results to the provided file.</h3>
-<pre><code>Infers file type from file name.
-Allowed file types: .csv, .xlsx, .txt
+        <h3 id="ir_pell_accepts.io_utils.output_results--output-results-to-the-provided-file">Output results to the provided file.<a class="headerlink" href="#ir_pell_accepts.io_utils.output_results--output-results-to-the-provided-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">Infers</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">name</span><span class="p">.</span>
+<span class="nx">Allowed</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">types</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="nx">csv</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="nx">xlsx</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="nx">txt</span>
 
-If .xlsx, adds or overwrites an existing sheet
-called 'Python Output'.
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.output_results--parameters">Parameters</h4>
+<span class="nx">If</span><span class="w"> </span><span class="p">.</span><span class="nx">xlsx</span><span class="p">,</span><span class="w"> </span><span class="nx">adds</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">overwrites</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">existing</span><span class="w"> </span><span class="nx">sheet</span>
+<span class="nx">called</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Python</span><span class="w"> </span><span class="nx">Output</span><span class="err">&#39;</span><span class="p">.</span>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.output_results--parameters">Parameters<a class="headerlink" href="#ir_pell_accepts.io_utils.output_results--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>df : pandas DataFrame</p>
 </blockquote>
-<pre><code>A dataframe to write into a file.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>A dataframe to write into a file.
+</code></pre></div>
+
 <blockquote>
 <p>file_path : string or Path object</p>
 </blockquote>
-<pre><code>A full file path and file name including extension.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>A full file path and file name including extension.
+</code></pre></div>
+
 <blockquote>
 <p>append_today : boolean (True/False)</p>
 <blockquote>
 <p>default = True</p>
 </blockquote>
 </blockquote>
-<pre><code>Append today's date to the file name in the format mm-dd-yyyy
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Append today&#39;s date to the file name in the format mm-dd-yyyy
+</code></pre></div>
+
 <blockquote>
 <p>append_version : boolean (True/False)</p>
 <blockquote>
 <p>default = True</p>
 </blockquote>
 </blockquote>
-<pre><code>Append the version of the pipeline python package used to the file name, e.g. 'v0-1-0'
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.output_results--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code><span class="nx">Append</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">v0</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.output_results--returns">Returns<a class="headerlink" href="#ir_pell_accepts.io_utils.output_results--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>None</p>
 </blockquote>
-<pre><code>Nothing is returned. Instead, a file is created or modified with 
+<div class="codehilite"><pre><span></span><code>Nothing is returned. Instead, a file is created or modified with 
 the output of the dataframe.
-</code></pre>
-<h4 id="ir_pell_accepts.io_utils.output_results--example">Example</h4>
+</code></pre></div>
+
+<h4 id="ir_pell_accepts.io_utils.output_results--example">Example<a class="headerlink" href="#ir_pell_accepts.io_utils.output_results--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>file_path = '/c/Users/sruddy1/my_file.xlsx'</p>
 <p>append_today = True</p>
 <p>append_version = True</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code>return
 
-    write df to a sheet called 'Python Output' to 
-    '/c/Users/sruddy1/my_file_12-13-2025_v0-3-2.xlsx'
-</code></pre>
-<h3 id="ir_pell_accepts.io_utils.output_results--_1"></h3>
+    write df to a sheet called &#39;Python Output&#39; to 
+    &#39;/c/Users/sruddy1/my_file_12-13-2025_v0-3-2.xlsx&#39;
+</code></pre></div>
+
+<h3 id="ir_pell_accepts.io_utils.output_results--_1"><a class="headerlink" href="#ir_pell_accepts.io_utils.output_results--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>

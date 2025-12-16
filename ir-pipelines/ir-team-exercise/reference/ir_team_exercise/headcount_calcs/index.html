@@ -1139,90 +1139,100 @@
 
 
 <h2 id="ir_team_exercise.headcount_calcs.fall_enrollment" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">fall_enrollment</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pell</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">transfer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">fall_enrollment</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pell</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">transfer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.fall_enrollment" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.fall_enrollment--calculate-enrollment-headcounts-for-4-full-time-undergraduate-student-subpopulations-in-the-provided-academic-periodterm">Calculate enrollment headcounts for 4 full-time undergraduate student subpopulations in the provided academic period/term.</h3>
-<pre><code>1. All students minus incoming transfer students. (includes pell and non-pell)
+        <h3 id="ir_team_exercise.headcount_calcs.fall_enrollment--calculate-enrollment-headcounts-for-4-full-time-undergraduate-student-subpopulations-in-the-provided-academic-periodterm">Calculate enrollment headcounts for 4 full-time undergraduate student subpopulations in the provided academic period/term.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.fall_enrollment--calculate-enrollment-headcounts-for-4-full-time-undergraduate-student-subpopulations-in-the-provided-academic-periodterm" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="n">minus</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="mf">.</span><span class="w"> </span><span class="p">(</span><span class="n">includes</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">pell</span><span class="p">)</span>
 
-2. All pell recipients minus those that are incoming transfer students.
+<span class="mf">2.</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="n">recipients</span><span class="w"> </span><span class="n">minus</span><span class="w"> </span><span class="n">those</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="mf">.</span>
 
-3. All incoming transfer students. (includes pell and non-pell)
+<span class="mf">3.</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="mf">.</span><span class="w"> </span><span class="p">(</span><span class="n">includes</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">pell</span><span class="p">)</span>
 
-4. All pell recipients that are strictly incoming transfer students.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--parameters">Parameters</h4>
+<span class="mf">4.</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="n">recipients</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">strictly</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="mf">.</span>
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.fall_enrollment--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfp : pandas DataFrame</p>
 </blockquote>
-<pre><code>Pell table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Pell table.
+</code></pre></div>
+
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>dfe : pandas DataFrame</p>
 </blockquote>
-<pre><code>Census Date Enrollment table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Census Date Enrollment table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>pell : boolean (True/False)</p>
 <blockquote>
 <p>default : False</p>
 </blockquote>
 </blockquote>
-<pre><code>True: restrict to pell recipients.
+<div class="codehilite"><pre><span></span><code><span class="n">True</span><span class="o">:</span><span class="w"> </span><span class="n">restrict</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="n">recipients</span><span class="o">.</span>
 
-False: include both pell and non-pell students.
-</code></pre>
+<span class="n">False</span><span class="o">:</span><span class="w"> </span><span class="k">include</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">pell</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">pell</span><span class="w"> </span><span class="n">students</span><span class="o">.</span>
+</code></pre></div>
+
 <blockquote>
 <p>transfer : boolean (True/False)</p>
 <blockquote>
 <p>default : False</p>
 </blockquote>
 </blockquote>
-<pre><code>True: restrict to incoming transfer students.
+<div class="codehilite"><pre><span></span><code><span class="n">True</span><span class="o">:</span><span class="w"> </span><span class="n">restrict</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="o">.</span>
 
-False: remove incoming transfer students.
-</code></pre>
+<span class="n">False</span><span class="o">:</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">incoming</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">students</span><span class="o">.</span>
+</code></pre></div>
+
 <p><mark>Note:</mark> <code>pell</code> and <code>transfer</code> combine to create the 4 aforementioned student subpopulations.</p>
-<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--returns">Returns</h4>
+<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.fall_enrollment--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>integer</p>
 </blockquote>
-<pre><code>Headcount for a given student subpopulation.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--example">Example</h4>
+<div class="codehilite"><pre><span></span><code><span class="nv">Headcount</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">given</span><span class="w"> </span><span class="nv">student</span><span class="w"> </span><span class="nv">subpopulation</span>.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.fall_enrollment--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.fall_enrollment--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>id_column = 'ID'</p>
 <p>pell = True</p>
 <p>transfer = False</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    1217
+<span class="w">    </span><span class="mi">1217</span>
 
-    The number of pell recipients that are not incoming transfer students.
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.fall_enrollment--_1"></h3>
+<span class="w">    </span><span class="nv">The</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">pell</span><span class="w"> </span><span class="nv">recipients</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">incoming</span><span class="w"> </span><span class="nv">transfer</span><span class="w"> </span><span class="nv">students</span>.
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.fall_enrollment--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.fall_enrollment--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1233,58 +1243,64 @@ False: remove incoming transfer students.
 
 
 <h2 id="ir_team_exercise.headcount_calcs.grs_cohort" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">grs_cohort</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">grs_cohort</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.grs_cohort" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort--calculate-the-first-time-full-time-cohort-size-for-the-provided-academic-periodterm">Calculate the First-Time, Full-Time cohort size for the provided academic period/term.</h3>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort--calculate-the-first-time-full-time-cohort-size-for-the-provided-academic-periodterm">Calculate the First-Time, Full-Time cohort size for the provided academic period/term.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort--calculate-the-first-time-full-time-cohort-size-for-the-provided-academic-periodterm" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>integer</p>
 </blockquote>
-<pre><code>Size of the implied cohort.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--example">Example</h4>
+<div class="codehilite"><pre><span></span><code><span class="nx">Size</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">implied</span><span class="w"> </span><span class="nx">cohort</span><span class="p">.</span>
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>id_column = 'ID'</p>
 <p>cohort_column = 'Cohort Name'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    1571
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.grs_cohort--_1"></h3>
+<span class="w">    </span><span class="mi">1571</span>
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.grs_cohort--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1295,66 +1311,73 @@ dataframe that stores the cohort names in the format
 
 
 <h2 id="ir_team_exercise.headcount_calcs.grs_cohort_grad" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">grs_cohort_grad</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">years_to_grad</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
+            <code class=" language-python"><span class="n">grs_cohort_grad</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">years_to_grad</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.grs_cohort_grad" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--n-year-fed-graduation-rate-for-the-provided-academic-period">N-year FED graduation rate for the provided academic period.</h3>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--n-year-fed-graduation-rate-for-the-provided-academic-period">N-year FED graduation rate for the provided academic period.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_grad--n-year-fed-graduation-rate-for-the-provided-academic-period" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_grad--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>years_to_grad : integer</p>
 </blockquote>
-<pre><code>The number of years to graduation for which to calculate the graduation rate.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">The</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">years</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">which</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">calculate</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="nv">rate</span>.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_grad--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>decimal float</p>
 </blockquote>
-<pre><code>Graduation rate rounded to 3 decimal places.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Graduation rate rounded to 3 decimal places.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_grad--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202180'</p>
 <p>id_column = 'ID'</p>
 <p>cohort_column = 'Cohort Name'</p>
 <p>years_to_grad = 4</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    0.703
+<span class="w">    </span><span class="mi">0</span>.<span class="mi">703</span>
 
-    The graduation rate of the 2021 FED cohort.
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--_1"></h3>
+<span class="w">    </span><span class="nv">The</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="mi">2021</span><span class="w"> </span><span class="nv">FED</span><span class="w"> </span><span class="nv">cohort</span>.
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_grad--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_grad--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1365,73 +1388,81 @@ dataframe that stores the cohort names in the format
 
 
 <h2 id="ir_team_exercise.headcount_calcs.grs_cohort_pell" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">grs_cohort_pell</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">grs_cohort_pell</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.grs_cohort_pell" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--calculate-the-number-of-pell-recipients-for-the-given-aid-year-and-the-fall-first-time-full-time-cohort">Calculate the number of Pell recipients for the given aid year and the 'Fall, First-Time, Full-Time' cohort.</h3>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--calculate-the-number-of-pell-recipients-for-the-given-aid-year-and-the-fall-first-time-full-time-cohort">Calculate the number of Pell recipients for the given aid year and the 'Fall, First-Time, Full-Time' cohort.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell--calculate-the-number-of-pell-recipients-for-the-given-aid-year-and-the-fall-first-time-full-time-cohort" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfp : pandas DataFrame</p>
 </blockquote>
-<pre><code>Pell table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Pell table.
+</code></pre></div>
+
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>aid_year_column : str</p>
 <blockquote>
 <p>default : 'AID_YEAR'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column name in the Pell table dataframe for aid year.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">Column</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">dataframe</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">aid</span><span class="w"> </span><span class="nv">year</span>.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>integer</p>
 </blockquote>
-<pre><code>Number of Pell recipients in the given aid year that
+<div class="codehilite"><pre><span></span><code>Number of Pell recipients in the given aid year that
 are Fall, First-Time, Full-Time.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--example">Example</h4>
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>id_column = 'ID'</p>
 <p>aid_year_column = 'AID_YEAR'</p>
 <p>cohort_column = 'Cohort Name'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    343
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--_1"></h3>
+<span class="w">    </span><span class="mi">343</span>
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1442,79 +1473,88 @@ are Fall, First-Time, Full-Time.
 
 
 <h2 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">grs_cohort_pell_grad</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">years_to_grad</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">grs_cohort_pell_grad</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">years_to_grad</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--n-year-pell-recipient-graduation-rate-for-the-fed-cohort-and-the-provided-academic-period">N-year Pell recipient graduation rate for the FED cohort and the provided academic period.</h3>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--n-year-pell-recipient-graduation-rate-for-the-fed-cohort-and-the-provided-academic-period">N-year Pell recipient graduation rate for the FED cohort and the provided academic period.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--n-year-pell-recipient-graduation-rate-for-the-fed-cohort-and-the-provided-academic-period" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfp : pandas DataFrame</p>
 </blockquote>
-<pre><code>Pell table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Pell table.
+</code></pre></div>
+
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>years_to_grad : integer</p>
 </blockquote>
-<pre><code>The number of years to graduation for which to calculate the graduation rate.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">The</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">years</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">which</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">calculate</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="nv">rate</span>.
+</code></pre></div>
+
 <blockquote>
 <p>aid_year_column : str</p>
 <blockquote>
 <p>default : 'AID_YEAR'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column name in the Pell table dataframe for aid year.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">Column</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">dataframe</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">aid</span><span class="w"> </span><span class="nv">year</span>.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>decimal float</p>
 </blockquote>
-<pre><code>Graduation rate rounded to 3 decimal places.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Graduation rate rounded to 3 decimal places.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202180'</p>
 <p>id_column = 'ID'</p>
 <p>cohort_column = 'Cohort Name'</p>
 <p>years_to_grad = 4</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    0.583
+<span class="w">    </span><span class="mi">0</span>.<span class="mi">583</span>
 
-    The graduation rate of the 2021 Pell recipient, FED cohort.
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--_1"></h3>
+<span class="w">    </span><span class="nv">The</span><span class="w"> </span><span class="nv">graduation</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="mi">2021</span><span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">recipient</span>,<span class="w"> </span><span class="nv">FED</span><span class="w"> </span><span class="nv">cohort</span>.
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.grs_cohort_pell_grad--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1525,60 +1565,66 @@ dataframe that stores the cohort names in the format
 
 
 <h2 id="ir_team_exercise.headcount_calcs.second_year_retention_rate" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">second_year_retention_rate</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
+            <code class=" language-python"><span class="n">second_year_retention_rate</span><span class="p">(</span><span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.second_year_retention_rate" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--second-year-retention-rate-for-the-fed-cohort-of-the-given-academic-period">Second-year retention rate for the FED cohort of the given academic period</h3>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--second-year-retention-rate-for-the-fed-cohort-of-the-given-academic-period">Second-year retention rate for the FED cohort of the given academic period<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate--second-year-retention-rate-for-the-fed-cohort-of-the-given-academic-period" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>decimal float</p>
 </blockquote>
-<pre><code>Retention rate rounded to 3 decimal places.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Retention rate rounded to 3 decimal places.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202480'</p>
 <p>id_column = 'ID'</p>
 <p>cohort_column = 'Cohort Name'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    0.899
+<span class="w">    </span><span class="mi">0</span>.<span class="mi">899</span>
 
-    The retention rate of the 2024 FED cohort.
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--_1"></h3>
+<span class="w">    </span><span class="nv">The</span><span class="w"> </span><span class="nv">retention</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="mi">2024</span><span class="w"> </span><span class="nv">FED</span><span class="w"> </span><span class="nv">cohort</span>.
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1589,73 +1635,81 @@ dataframe that stores the cohort names in the format
 
 
 <h2 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">second_year_retention_rate_pell</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">second_year_retention_rate_pell</span><span class="p">(</span><span class="n">dfp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dfr</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">aid_year_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AID_YEAR&#39;</span><span class="p">,</span> <span class="n">cohort_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Cohort Name&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--second-year-retention-rate-for-the-pell-fed-cohort-of-the-given-academic-period">Second-year retention rate for the Pell + FED cohort of the given academic period</h3>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--second-year-retention-rate-for-the-pell-fed-cohort-of-the-given-academic-period">Second-year retention rate for the Pell + FED cohort of the given academic period<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--second-year-retention-rate-for-the-pell-fed-cohort-of-the-given-academic-period" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfp : pandas DataFrame</p>
 </blockquote>
-<pre><code>Pell table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Pell table.
+</code></pre></div>
+
 <blockquote>
 <p>dfr : pandas DataFrame</p>
 </blockquote>
-<pre><code>Undergraduate Retention and Graduation table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Undergraduate Retention and Graduation table.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>aid_year_column : str</p>
 <blockquote>
 <p>default : 'AID_YEAR'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column name in the Pell table dataframe for aid year.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">Column</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">Pell</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">dataframe</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">aid</span><span class="w"> </span><span class="nv">year</span>.
+</code></pre></div>
+
 <blockquote>
 <p>cohort_column : str</p>
 <blockquote>
 <p>default : 'Cohort Name'</p>
 </blockquote>
 </blockquote>
-<pre><code>Column in the 'Undergraduate Retention and Graduation'
+<div class="codehilite"><pre><span></span><code>Column in the &#39;Undergraduate Retention and Graduation&#39;
 dataframe that stores the cohort names in the format 
-'2025 Fall, First-Time, Full-Time'
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--returns">Returns</h4>
+&#39;2025 Fall, First-Time, Full-Time&#39;
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>decimal float</p>
 </blockquote>
-<pre><code>Retention rate rounded to 3 decimal places.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Retention rate rounded to 3 decimal places.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202480'</p>
 <p>id_column = 'ID'</p>
 <p>cohort_column = 'Cohort Name'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    0.855
+<span class="w">    </span><span class="mi">0</span>.<span class="mi">855</span>
 
-    The retention rate of the 2024 PELL+FED cohort.
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--_1"></h3>
+<span class="w">    </span><span class="nv">The</span><span class="w"> </span><span class="nv">retention</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="mi">2024</span><span class="w"> </span><span class="nv">PELL</span><span class="o">+</span><span class="nv">FED</span><span class="w"> </span><span class="nv">cohort</span>.
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.second_year_retention_rate_pell--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -1666,47 +1720,52 @@ dataframe that stores the cohort names in the format
 
 
 <h2 id="ir_team_exercise.headcount_calcs.total_headcount" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">total_headcount</span><span class="p">(</span><span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
+            <code class=" language-python"><span class="n">total_headcount</span><span class="p">(</span><span class="n">dfe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">id_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span></code>
 
-</h2>
+<a href="#ir_team_exercise.headcount_calcs.total_headcount" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_team_exercise.headcount_calcs.total_headcount--calculate-total-full-time-degree-seeking-undergraduate-enrollment-headcount-for-the-provided-academic-periodterm">Calculate total full-time, degree-seeking, undergraduate enrollment headcount for the provided academic period/term.</h3>
-<h4 id="ir_team_exercise.headcount_calcs.total_headcount--parameters">Parameters</h4>
+        <h3 id="ir_team_exercise.headcount_calcs.total_headcount--calculate-total-full-time-degree-seeking-undergraduate-enrollment-headcount-for-the-provided-academic-periodterm">Calculate total full-time, degree-seeking, undergraduate enrollment headcount for the provided academic period/term.<a class="headerlink" href="#ir_team_exercise.headcount_calcs.total_headcount--calculate-total-full-time-degree-seeking-undergraduate-enrollment-headcount-for-the-provided-academic-periodterm" title="Permanent link">&para;</a></h3>
+<h4 id="ir_team_exercise.headcount_calcs.total_headcount--parameters">Parameters<a class="headerlink" href="#ir_team_exercise.headcount_calcs.total_headcount--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>dfe : pandas DataFrame</p>
 </blockquote>
-<pre><code>Census Date Enrollment table.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Census Date Enrollment table.
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 </blockquote>
-<pre><code>Academic period: e.g., '202580'.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Academic period: e.g., &#39;202580&#39;.
+</code></pre></div>
+
 <blockquote>
 <p>id_column : string</p>
 </blockquote>
-<pre><code>The name of the column being used to identify students. 
+<div class="codehilite"><pre><span></span><code>The name of the column being used to identify students. 
 Applies to all dataframes.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.total_headcount--returns">Returns</h4>
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.total_headcount--returns">Returns<a class="headerlink" href="#ir_team_exercise.headcount_calcs.total_headcount--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>integer</p>
 </blockquote>
-<pre><code>Total enrollment headcount.
-</code></pre>
-<h4 id="ir_team_exercise.headcount_calcs.total_headcount--example">Example</h4>
+<div class="codehilite"><pre><span></span><code>Total enrollment headcount.
+</code></pre></div>
+
+<h4 id="ir_team_exercise.headcount_calcs.total_headcount--example">Example<a class="headerlink" href="#ir_team_exercise.headcount_calcs.total_headcount--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>term = '202580'</p>
 <p>id_column = 'ID'</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    6939
-</code></pre>
-<h3 id="ir_team_exercise.headcount_calcs.total_headcount--_1"></h3>
+<span class="w">    </span><span class="mi">6939</span>
+</code></pre></div>
+
+<h3 id="ir_team_exercise.headcount_calcs.total_headcount--_1"><a class="headerlink" href="#ir_team_exercise.headcount_calcs.total_headcount--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>

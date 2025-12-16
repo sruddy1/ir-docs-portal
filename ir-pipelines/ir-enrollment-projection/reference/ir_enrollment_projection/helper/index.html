@@ -671,45 +671,49 @@
 
 
 <h2 id="ir_enrollment_projection.helper.convert_year_to_cohort" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">convert_year_to_cohort</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
+            <code class=" language-python"><span class="n">convert_year_to_cohort</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
 
-</h2>
+<a href="#ir_enrollment_projection.helper.convert_year_to_cohort" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--subtract-offset-number-of-years-from-the-year-provided">Subtract 'offset' number of years from the year provided</h3>
-<pre><code>Used as a helper to other functions and is defined in the contexts
-of those functions. Purpose is to return the cohort year based 
-on the reporting year. For example, if the reporting year is 2026 and
-one is interested in the most recent 2nd-year retention then the 
-cohort year of interest is '2024'.
-</code></pre>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--parameters">Parameters</h4>
+        <h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--subtract-offset-number-of-years-from-the-year-provided">Subtract 'offset' number of years from the year provided<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_cohort--subtract-offset-number-of-years-from-the-year-provided" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">Used</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">helper</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">functions</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">defined</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">contexts</span>
+<span class="nv">of</span><span class="w"> </span><span class="nv">those</span><span class="w"> </span><span class="nv">functions</span>.<span class="w"> </span><span class="nv">Purpose</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">cohort</span><span class="w"> </span><span class="nv">year</span><span class="w"> </span><span class="nv">based</span><span class="w"> </span>
+<span class="nv">on</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">reporting</span><span class="w"> </span><span class="nv">year</span>.<span class="w"> </span><span class="k">For</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">reporting</span><span class="w"> </span><span class="nv">year</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="nv">and</span>
+<span class="nv">one</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">interested</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">most</span><span class="w"> </span><span class="nv">recent</span><span class="w"> </span><span class="mi">2</span><span class="nv">nd</span><span class="o">-</span><span class="nv">year</span><span class="w"> </span><span class="nv">retention</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span>
+<span class="nv">cohort</span><span class="w"> </span><span class="nv">year</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">interest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="s1">&#39;2024&#39;</span>.
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--parameters">Parameters<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_cohort--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>year : string</p>
 </blockquote>
-<pre><code>The reporting year, e.g. '2026'
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The reporting year, e.g. &#39;2026&#39;
+</code></pre></div>
+
 <blockquote>
 <p>offset : integer</p>
 </blockquote>
-<pre><code>How many years to subtract.
-</code></pre>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code>How many years to subtract.
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--returns">Returns<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_cohort--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>string </p>
 </blockquote>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--example">Example</h4>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_cohort--example">Example<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_cohort--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>year = '2026'</p>
 <p>offset = 2</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    '2024'
-</code></pre>
-<h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--_1"></h3>
+<span class="w">    </span><span class="s1">&#39;2024&#39;</span>
+</code></pre></div>
+
+<h3 id="ir_enrollment_projection.helper.convert_year_to_cohort--_1"><a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_cohort--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
@@ -720,54 +724,59 @@ cohort year of interest is '2024'.
 
 
 <h2 id="ir_enrollment_projection.helper.convert_year_to_term" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">convert_year_to_term</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;80&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
+            <code class=" language-python"><span class="n">convert_year_to_term</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">term</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;80&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span></code>
 
-</h2>
+<a href="#ir_enrollment_projection.helper.convert_year_to_term" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
-        <h3 id="ir_enrollment_projection.helper.convert_year_to_term--subtract-offset-number-of-years-from-the-year-provided-and-add-a-term-label">Subtract 'offset' number of years from the year provided and add a term label.</h3>
-<pre><code>Used as a helper to other functions and is defined in the contexts
-of those functions. Purpose is to return the cohort term based
-on the reporting year. For example, if the reporting year is 2026 and
-one is interested in the most recent 2nd-year retention then the 
-cohort term is '202480'.
-</code></pre>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_term--parameters">Parameters</h4>
+        <h3 id="ir_enrollment_projection.helper.convert_year_to_term--subtract-offset-number-of-years-from-the-year-provided-and-add-a-term-label">Subtract 'offset' number of years from the year provided and add a term label.<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_term--subtract-offset-number-of-years-from-the-year-provided-and-add-a-term-label" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">Used</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">helper</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">functions</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">defined</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">contexts</span>
+<span class="nv">of</span><span class="w"> </span><span class="nv">those</span><span class="w"> </span><span class="nv">functions</span>.<span class="w"> </span><span class="nv">Purpose</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">cohort</span><span class="w"> </span><span class="nv">term</span><span class="w"> </span><span class="nv">based</span>
+<span class="nv">on</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">reporting</span><span class="w"> </span><span class="nv">year</span>.<span class="w"> </span><span class="k">For</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">reporting</span><span class="w"> </span><span class="nv">year</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="nv">and</span>
+<span class="nv">one</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">interested</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">most</span><span class="w"> </span><span class="nv">recent</span><span class="w"> </span><span class="mi">2</span><span class="nv">nd</span><span class="o">-</span><span class="nv">year</span><span class="w"> </span><span class="nv">retention</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span>
+<span class="nv">cohort</span><span class="w"> </span><span class="nv">term</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="s1">&#39;202480&#39;</span>.
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--parameters">Parameters<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_term--parameters" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>year : string</p>
 </blockquote>
-<pre><code>The reporting year, e.g. '2026'
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The reporting year, e.g. &#39;2026&#39;
+</code></pre></div>
+
 <blockquote>
 <p>offset : integer</p>
 </blockquote>
-<pre><code>How many years to subtract.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>How many years to subtract.
+</code></pre></div>
+
 <blockquote>
 <p>term : string</p>
 <blockquote>
 <p>default : "80"</p>
 </blockquote>
 </blockquote>
-<pre><code>The term designator of the cohort of interest
-</code></pre>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_term--returns">Returns</h4>
+<div class="codehilite"><pre><span></span><code>The term designator of the cohort of interest
+</code></pre></div>
+
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--returns">Returns<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_term--returns" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>string </p>
 </blockquote>
-<h4 id="ir_enrollment_projection.helper.convert_year_to_term--example">Example</h4>
+<h4 id="ir_enrollment_projection.helper.convert_year_to_term--example">Example<a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_term--example" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>year = '2026'</p>
 <p>offset = 2</p>
 <p>term = "80"</p>
 </blockquote>
-<pre><code>return
+<div class="codehilite"><pre><span></span><code><span class="k">return</span>
 
-    '202480'
-</code></pre>
-<h3 id="ir_enrollment_projection.helper.convert_year_to_term--_1"></h3>
+<span class="w">    </span><span class="s1">&#39;202480&#39;</span>
+</code></pre></div>
+
+<h3 id="ir_enrollment_projection.helper.convert_year_to_term--_1"><a class="headerlink" href="#ir_enrollment_projection.helper.convert_year_to_term--_1" title="Permanent link">&para;</a></h3>
 
 
     </div>
