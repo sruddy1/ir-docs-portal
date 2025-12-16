@@ -5,7 +5,7 @@
 ## Sign up for a Github account with your UD email
 
 - Go to `https://github.com/signup`
-- Make sure to create your own username to the same as your email username.
+- <mark>Warning</mark>: Change the username assigned to you to your UD username. 
 - You now can be added as a contributor to repos.
 
 ####
@@ -14,11 +14,11 @@
 
 ####
 
->#### STEP 1 — Open Git Bash
+## STEP 1 — Open Git Bash
 >
 >####
 >
->#### STEP 2 — Create local directories
+## STEP 2 — Create local directories
 >
 >> - `mkdir -p C:/Users/<username>/ir/ir-pipelines`
 >>   
@@ -28,13 +28,21 @@
 >
 >####
 >
->#### STEP 3 — Clone the Repository
+## STEP 3 — Update Git credentials
+>
+>>
+>> - `git config --global user.name "first last"`
+>> - `git config --global user.email "udayton email"`
+>
+>####
+>
+## STEP 4 — Clone the Repository
 >
 >> - `git clone https://github.com/sruddy1/ir-team-exercise.git`
 >
 >####
 >
->#### STEP 4 — Create Your Personal Branch
+## STEP 5 — Create Your Personal Branch
 >
 >> - `cd ir-team-exercise`
 >>
@@ -45,7 +53,20 @@
 >>   - Creates a ***branch*** in Github, which is essentially your own copy of the repo.
 >>   - Disconnects your changes from the root repo, referred to as "main" or "master"
 >>   - Allows changes to be made and pushed to Github without updating "main".
->>   - Prevents conflicts between users who are using separate branches. 
+>>   - Prevents conflicts between users who are using separate branches.
+>
+>####
+>
+## STEP 6 — Authenticate Git Account
+>
+>> - `git credential-manager github login`
+>>
+>> - An authentication window will pop up. Go through the steps to authenticate.
+>>
+>> - Now your local machine is authenticated and linked to your github account.
+>
+>####
+>
 
 ####
 
@@ -53,20 +74,20 @@
 
 ####
 
->#### STEP 1 — Open Visual Studio Code
+## STEP 1 — Open Visual Studio Code
 >
 > - Click the 5th icon down on the left pane 
 > - Click the install button for 3 python plugins: Pylance, Python, and Python debugger
 >
 >####
 >
->#### STEP 2 — Turn on View Hidden Files
+## STEP 2 — Turn on View Hidden Files
 >
 >> - Open `File Explorer` > `View` > `Show` > Select `Hidden Items`
 >
 >####
 >
->#### STEP 3 — Create ~/.bashrc
+## STEP 3 — Create ~/.bashrc
 >
 >> - Open Git Bash
 >> - (type) `cd ~`
@@ -74,7 +95,7 @@
 >
 >####
 >
->#### STEP 3 — Update ~/.bashrc
+## STEP 4 — Update ~/.bashrc
 >
 >> - Open VSC
 >>
