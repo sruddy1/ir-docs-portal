@@ -3,8 +3,10 @@
 ## Step 1: Install python packages
 >
 > - Open up GitBash
-> - `conda activate`
-> - `pip install sqlalchemy oracledb`
+>```bash
+> conda activate
+> pip install sqlalchemy oracledb
+> ```
 ####
 ## Step 2: Set up Connection in Python
 >
