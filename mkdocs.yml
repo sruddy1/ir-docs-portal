@@ -8,6 +8,14 @@ theme:
     - navigation.top
     - content.code.copy
 
+markdown_extensions:
+  - admonition
+  - fenced_code
+  - codehilite
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
 plugins:
   - search
   - gen-files:
@@ -37,4 +45,5 @@ nav:
   - Add New Submodule: add_new_submodule.md
   - Update Submodules: update_submodules.md
   - Add New Documentation: add_new_documentation.md 
+  - Python -> ODS: python_to_ods.md 
   
