@@ -24,6 +24,7 @@
 > python init_repo.py
 > pip install -e .
 > python -m ipykernel install --user --name=myenv --display-name "ir-<project>-<name>"
+> deactivate
 > git add -A
 > git commit -m "repo initialization"
 > git push
