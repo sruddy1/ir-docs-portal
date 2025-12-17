@@ -46,4 +46,5 @@ nav:
   - Update Submodules: update_submodules.md
   - Add New Documentation: add_new_documentation.md 
   - Python -> ODS: python_to_ods.md 
+  - Create Git Repo: new_git_repo.md
   

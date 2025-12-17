@@ -18,7 +18,8 @@
 >> - Navigate to the appropriate directory
 >> - Click `New`
 >
-> - Set up Connection by copy-pasting the following python code
+> - Set up Connection by copy-pasting and running the following python code
+>> <mark>Note: update user and password as needed.</mark>
 > ```python
 > from sqlalchemy import create_engine
 > 
@@ -84,5 +85,6 @@
 > """
 > df_tables = pd.read_sql(sql, engine)
 > df_tables
+> ```
 
 
