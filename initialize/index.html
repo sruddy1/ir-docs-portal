@@ -1307,11 +1307,10 @@
 <h2 id="step-2-create-local-directories">STEP 2 — Create local directories<a class="headerlink" href="#step-2-create-local-directories" title="Permanent link">&para;</a></h2>
 <p>Run in GitBash:</p>
 <blockquote>
-<p>```bash
-cd ~
-mkdir -p ./ir/ir-pipelines
-cd ~/ir/ir-pipelines
-</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
+mkdir<span class="w"> </span>-p<span class="w"> </span>ir/ir-pipelines
+<span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines
+</code></pre></div>
 </blockquote>
 <h4 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <blockquote></blockquote>
@@ -1364,30 +1363,19 @@ git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </
 <h2 id="set-up-gitbash-with-anaconda-commands-and-python">Set up GitBash with Anaconda Commands and Python<a class="headerlink" href="#set-up-gitbash-with-anaconda-commands-and-python" title="Permanent link">&para;</a></h2>
 <h4 id="_11"><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <h2 id="step-1-open-visual-studio-code">STEP 1 — Open Visual Studio Code<a class="headerlink" href="#step-1-open-visual-studio-code" title="Permanent link">&para;</a></h2>
-<blockquote>
 <ul>
 <li>Click the 5th icon down on the left pane </li>
 <li>Click the install button for 3 python plugins: <code>Pylance</code>, <code>Python</code>, and <code>Python debugger</code></li>
 </ul>
-</blockquote>
 <h4 id="_12"><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <blockquote></blockquote>
 <h2 id="step-2-turn-on-view-hidden-files">STEP 2 — Turn on View Hidden Files<a class="headerlink" href="#step-2-turn-on-view-hidden-files" title="Permanent link">&para;</a></h2>
-<blockquote>
 <ul>
 <li>Open <code>File Explorer</code></li>
-<li>Go to <code>View</code> &gt; <code>Show</code> &gt; Select <code>Hidden Items</code>
-</li>
+<li>Go to <code>View</code> &gt; <code>Show</code> &gt; Select <code>Hidden Items</code></li>
 </ul>
-</blockquote>
 <h4 id="_13"><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<blockquote></blockquote>
 <h2 id="step-3-create-bashrc">STEP 3 — Create ~/.bashrc<a class="headerlink" href="#step-3-create-bashrc" title="Permanent link">&para;</a></h2>
-<blockquote>
-<ul>
-<li>Open Git Bash</li>
-</ul>
-</blockquote>
 <p>Run in GitBash:</p>
 <blockquote>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
@@ -1395,7 +1383,6 @@ touch<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </blockquote>
 <h4 id="_14"><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<blockquote></blockquote>
 <h2 id="step-4-update-bashrc">STEP 4 — Update ~/.bashrc<a class="headerlink" href="#step-4-update-bashrc" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1406,35 +1393,37 @@ touch<span class="w"> </span>~/.bashrc
 </li>
 <li>
 <p>Using File Explorer: Confirm/Find path to conda.sh based on installation type:</p>
+</li>
+</ul>
 <blockquote>
 <ul>
-<li>All Users Installation: <code>/c/ProgramData/anaconda3/etc/profile.d/conda.sh</code></li>
-<li>Single User Installation: <code>/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh</code></li>
-</ul>
-</blockquote>
+<li>
+<p>All Users Installation: <code>/c/ProgramData/anaconda3/etc/profile.d/conda.sh</code></p>
 </li>
 <li>
-<p>Using File Explorer: Confirm/Find path to anaconda3 folder based on installation type:</p>
+<p>Single User Installation: <code>/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh</code></p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Using File Explorer: Confirm/Find path to anaconda3 folder based on installation type:</li>
+</ul>
 <blockquote>
 <ul>
-<li>All Users Installation: <code>/c/ProgramData/anaconda3</code></li>
-<li>Single User Installation: <code>/c/Users/&lt;username&gt;/anaconda3</code></li>
-</ul>
-</blockquote>
+<li>
+<p>All Users Installation: <code>/c/ProgramData/anaconda3</code></p>
 </li>
 <li>
-<p>Copy-paste the following command to the <code>.bashrc</code> file that is open in VSC:</p>
+<p>Single User Installation: <code>/c/Users/&lt;username&gt;/anaconda3</code></p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Copy-paste the following command to the <code>.bashrc</code> file that is open in VSC:</li>
+</ul>
 <blockquote>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-</code></pre></div>
-</blockquote>
-</li>
-<li>
-<p>Copy-paste the following command to the <code>.bashrc</code> file that is open in VSC:</p>
-</li>
-</ul>
-<blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 .<span class="w"> </span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>

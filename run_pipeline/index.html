@@ -1167,11 +1167,11 @@
 </li>
 </ul>
 <blockquote>
-<p>```bash
-cd ~/ir/ir-pipelines
-git clone https://github.com/sruddy1/ir-team-exercise.git
-cd ir-team-exercise
-git checkout -b team-exercise/<your-first-name></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sruddy1/ir-team-exercise.git
+<span class="nb">cd</span><span class="w"> </span>ir-team-exercise
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>team-exercise/&lt;your-first-name&gt;
+</code></pre></div>
 </blockquote>
 <ul>
 <li>Creates a <strong><em>branch</em></strong> in Github, which is essentially your own copy of the repo.</li>
@@ -1189,17 +1189,21 @@ git checkout -b team-exercise/<your-first-name></p>
 <p>Click <code>File</code> &gt; <code>Open File</code>   </p>
 </li>
 <li>
-<p>Navigate to and open <code>C:\Users\&lt;username&gt;\ir\ir-pipelines\ir-team-exercise\configs\config.yaml</code></p>
+<p>Navigate to and open</p>
 </li>
 </ul>
+<p><code>C:\Users\&lt;username&gt;\ir\ir-pipelines\ir-team-exercise\configs\config.yaml</code></p>
+<ul>
+<li>
+<p>In file, update:</p>
 <blockquote>
-<ul>
-<li><strong>name</strong>: '&lt;First name&gt;'</li>
-<li><strong>box_root</strong>: C:/Users/<code>&lt;username&gt;</code>/Box</li>
-</ul>
+<p><strong>name</strong>: '&lt;First name&gt;'</p>
+<p><strong>box_root</strong>: C:/Users/<code>&lt;username&gt;</code>/Box</p>
 </blockquote>
-<ul>
-<li>Save &amp; Close</li>
+</li>
+<li>
+<p>Save &amp; Close</p>
+</li>
 </ul>
 <h4 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <h2 id="step-3-build-activate-the-python-virtual-environment">Step 3 — Build &amp; Activate the Python Virtual Environment<a class="headerlink" href="#step-3-build-activate-the-python-virtual-environment" title="Permanent link">&para;</a></h2>
@@ -1212,20 +1216,18 @@ git checkout -b team-exercise/<your-first-name></p>
 </li>
 </ul>
 <blockquote>
-<p>```bash
-cd C:/Users/<username>/ir/ir-pipelines/ir-team-exercise
-python -m venv .venv
-source .venv/Scripts/activate</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:/Users/&lt;username&gt;/ir/ir-pipelines/ir-team-exercise
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/Scripts/activate
+</code></pre></div>
 </blockquote>
 <ul>
 <li><code>python ...</code> installs the base version of python locally in the directory, called a <code>virtual environment</code></li>
-<li><code>source ...</code> activates the virtual environment.<blockquote>
-<ul>
-<li>While activated, all installations of python packages that follow will be installed into the virtual environment. Therefore, every pipeline can have its own python installation.</li>
+<li><code>source ...</code> activates the virtual environment.</li>
 </ul>
+<blockquote>
+<p>While activated, all installations of python packages that follow will be installed into the virtual environment. Therefore, every pipeline can have its own python installation.</p>
 </blockquote>
-</li>
-</ul>
 <h4 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <h2 id="step-4-install-packages-into-the-virtual-environment">Step 4 — Install Packages into the Virtual Environment<a class="headerlink" href="#step-4-install-packages-into-the-virtual-environment" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1233,7 +1235,7 @@ source .venv/Scripts/activate</p>
 </ul>
 <p>Run in GitBash:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 </blockquote>
 <ul>
@@ -1247,7 +1249,7 @@ source .venv/Scripts/activate</p>
 </ul>
 <p>Run in GitBash:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 </blockquote>
 <ul>
@@ -1262,7 +1264,7 @@ source .venv/Scripts/activate</p>
 <h2 id="step-5-make-the-virtual-environment-selectable-by-jupyter-notebook">STEP 5 — Make the virtual environment selectable by Jupyter Notebook<a class="headerlink" href="#step-5-make-the-virtual-environment-selectable-by-jupyter-notebook" title="Permanent link">&para;</a></h2>
 <p>Run in GitBash:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>myenv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;ir-team-exercise&quot;</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>ir-team-exercise
 </code></pre></div>
 </blockquote>
 <ul>
@@ -1304,7 +1306,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <h2 id="run-branch-a-second-third-time-in-the-future">Run Branch a second, third,... time in the Future<a class="headerlink" href="#run-branch-a-second-third-time-in-the-future" title="Permanent link">&para;</a></h2>
 <p>Run in GitBash:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:/Users/&lt;username&gt;/ir/ir-pipelines/ir-team-exercise
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-team-exercise
 git<span class="w"> </span>checkout<span class="w"> </span>team-exercise/&lt;name&gt;
 </code></pre></div>
 </blockquote>
@@ -1313,10 +1315,10 @@ git<span class="w"> </span>checkout<span class="w"> </span>team-exercise/&lt;nam
 - Build environment (only if you haven't previously)
 - Activate environment
 - Install External Packages (only if requirements have changed since last build)
-- Install Pipeline Package (only if changes have been made to the src/ .py files)
+- Install Pipeline Package (only if changes have been made to the src/ .py files
 - Run Pipeline
 - Deactivate Environment
-- git add . &gt; git commit -m "" &gt; git push -u origin <branch> (if you want to keep a record of any changes to tracked files)</p>
+- <code>git add .</code> &gt; <code>git commit -m ""</code> &gt; <code>git push -u origin &lt;branch&gt;</code> (if you want to keep a record of any changes to tracked files)</p>
 <h4 id="_10"><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <h2 id="all-commands">All Commands<a class="headerlink" href="#all-commands" title="Permanent link">&para;</a></h2>
 <h4 id="_11"><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
@@ -1336,8 +1338,9 @@ git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </
 <p><code>bash
 python -m venv .venv
 source .venv/Scripts/activate
-pip install -r requirements.txt
-pip install -e .
+python -m pip install -r requirements.txt
+python -m pip install -e .
+python -m ipykernel install --user --name=ir-team-exercise
 python run.py
 deactivate
 git add .
