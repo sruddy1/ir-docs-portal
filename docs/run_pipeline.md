@@ -81,6 +81,7 @@ Run in GitBash:
 
 - This installs all the `*.py` files contained in `./src/ir_team_exercise` as a python package inside the virtual environment
 - Allows you to access the functions inside python scripts, e.g. if you want to use the function `validate_columns` contained inside `./src/ir_team_exercise/checks.py` then you would add this to your python script:
+  
 > ```python
 > from ir_team_exercise.checks import validate_columns
 > ```
