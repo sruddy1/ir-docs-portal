@@ -24,10 +24,12 @@ Run in GitBash:
 
 > ```bash
 > cd ~
-> mkdir -p ./ir/ir-pipelines
+> mkdir -p ir/ir-pipelines
 > cd ~/ir/ir-pipelines
->
+> ```
+
 ####
+
 >
 ## STEP 3 — Update Git credentials
 
@@ -88,21 +90,19 @@ Run in GitBash:
 
 ## STEP 1 — Open Visual Studio Code
 
-> - Click the 5th icon down on the left pane 
-> - Click the install button for 3 python plugins: `Pylance`, `Python`, and `Python debugger`
+- Click the 5th icon down on the left pane 
+- Click the install button for 3 python plugins: `Pylance`, `Python`, and `Python debugger`
 
 ####
 >
 ## STEP 2 — Turn on View Hidden Files
->
-> - Open `File Explorer`
-> - Go to `View` > `Show` > Select `Hidden Items`
->
+
+- Open `File Explorer`
+- Go to `View` > `Show` > Select `Hidden Items`
+
 ####
->
+
 ## STEP 3 — Create ~/.bashrc
->
-- Open Git Bash
 
 Run in GitBash:
 
@@ -112,7 +112,7 @@ Run in GitBash:
 > ```
 
 ####
->
+
 ## STEP 4 — Update ~/.bashrc
 
 - Open Visual Studio Code (VSC)
@@ -120,24 +120,21 @@ Run in GitBash:
 - Go to `File` > `Open File` > Open `C:\Users\<username>\.bashrc`
 
 - Using File Explorer: Confirm/Find path to conda.sh based on installation type:
->
+
 > - All Users Installation: `/c/ProgramData/anaconda3/etc/profile.d/conda.sh`
+
 > - Single User Installation: `/c/Users/<username>/AppData/Local/anaconda3/etc/profile.d/conda.sh`
 
 - Using File Explorer: Confirm/Find path to anaconda3 folder based on installation type:
->
+
 > - All Users Installation: `/c/ProgramData/anaconda3`
+
 > - Single User Installation: `/c/Users/<username>/anaconda3`
 
 - Copy-paste the following command to the `.bashrc` file that is open in VSC:
->
-> ```bash
-> export PATH="/c/Users/<username>/AppData/Local/anaconda3:$PATH"
-> ```
- 
-- Copy-paste the following command to the `.bashrc` file that is open in VSC:
 
 > ```bash
+> export PATH="/c/Users/<username>/AppData/Local/anaconda3:$PATH"
 > if [ -f "/c/Users/<username>/AppData/Local/anaconda3/etc/profile.d/conda.sh" ]; then
 > . "/c/Users/<username>/AppData/Local/anaconda3/etc/profile.d/conda.sh"
 > fi

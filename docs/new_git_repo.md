@@ -21,11 +21,11 @@ Run in GitBash:
 > cd ir-<project>-<name>
 > python -m venv .venv
 > source .venv/Scripts/activate
-> pip install -r requirements.txt
+> python -m pip install -r requirements.txt
 > python init_repo.py
-> pip install -e .
-> python -m ipykernel install --user --name=myenv --display-name "ir-<project>-<name>"
-> git add -A
+> python -m pip install -e .
+> python -m ipykernel install --user --name=ir-<project>-<name>
+> git add .
 > git commit -m "repo initialization"
 > git push
 > deactivate

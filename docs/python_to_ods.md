@@ -13,10 +13,11 @@ Run in GitBash:
 ## Step 2 — Set up Connection in Python
 
 Open up an existing/launch new Jupyter Notebook, or open a Python Script via VSC.
-> To launch a new jupyter notebook:
+
+To launch a new jupyter notebook:
 > - Open up Anaconda
 > - Click `Launch Jupyter`
-> - Navigate to the appropriate directory
+> - Navigate to the directory you want to open it in
 > - Click `New`
 
 Set up Connection by copy-pasting and running the following python code

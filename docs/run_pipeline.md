@@ -13,6 +13,7 @@
 > git clone https://github.com/sruddy1/ir-team-exercise.git
 > cd ir-team-exercise
 > git checkout -b team-exercise/<your-first-name>
+> ```
 
 - Creates a ***branch*** in Github, which is essentially your own copy of the repo.
 - Disconnects your changes from the root repo, referred to as "main" or "master"
@@ -27,10 +28,14 @@
   
 - Click `File` > `Open File`   
 
-- Navigate to and open `C:\Users\<username>\ir\ir-pipelines\ir-team-exercise\configs\config.yaml`
+- Navigate to and open
 
-> - **name**: '<First name\>'
-> - **box_root**: C:/Users/`<username>`/Box
+  `C:\Users\<username>\ir\ir-pipelines\ir-team-exercise\configs\config.yaml`
+
+- In file, update:
+> **name**: '<First name\>'
+> 
+> **box_root**: C:/Users/`<username>`/Box
 
 - Save & Close
 
@@ -46,11 +51,12 @@
 > cd C:/Users/<username>/ir/ir-pipelines/ir-team-exercise
 > python -m venv .venv
 > source .venv/Scripts/activate
+> ```
 
 - `python ...` installs the base version of python locally in the directory, called a `virtual environment`
 - `source ...` activates the virtual environment.
->
-> - While activated, all installations of python packages that follow will be installed into the virtual environment. Therefore, every pipeline can have its own python installation.
+
+> While activated, all installations of python packages that follow will be installed into the virtual environment. Therefore, every pipeline can have its own python installation.
 
 ####
 
@@ -60,7 +66,7 @@
 
 Run in GitBash:
 > ```bash
-> pip install -r requirements.txt
+> python -m pip install -r requirements.txt
 > ```
 
 - `requirements.txt` contains a list of python packages and their versions that were used to build the pipeline.
@@ -70,7 +76,7 @@ Run in GitBash:
 
 Run in GitBash:
 > ```bash
-> pip install -e .
+> python -m pip install -e .
 > ```
 
 - This installs all the `*.py` files contained in `./src/ir_team_exercise` as a python package inside the virtual environment
@@ -85,7 +91,7 @@ Run in GitBash:
 
 Run in GitBash:
 > ```bash
-> python -m ipykernel install --user --name=myenv --display-name "ir-team-exercise"
+> python -m ipykernel install --user --name=ir-team-exercise
 > ```
 
 - Note: This is not required to run the pipeline.
@@ -132,7 +138,7 @@ Run in GitBash:
 
 Run in GitBash:
 > ```bash
-> cd C:/Users/<username>/ir/ir-pipelines/ir-team-exercise
+> cd ~/ir/ir-pipelines/ir-team-exercise
 > git checkout team-exercise/<name>
 > ```
 
@@ -141,10 +147,10 @@ Then,
 - Build environment (only if you haven't previously)
 - Activate environment
 - Install External Packages (only if requirements have changed since last build)
-- Install Pipeline Package (only if changes have been made to the src/ .py files)
+- Install Pipeline Package (only if changes have been made to the src/ .py files
 - Run Pipeline
 - Deactivate Environment
-- git add . > git commit -m "" > git push -u origin <branch> (if you want to keep a record of any changes to tracked files)
+- `git add .` > `git commit -m ""` > `git push -u origin <branch>` (if you want to keep a record of any changes to tracked files)
 
 ####
 
@@ -166,8 +172,9 @@ GitBash:
 >```bash
 > python -m venv .venv
 > source .venv/Scripts/activate
-> pip install -r requirements.txt
-> pip install -e .
+> python -m pip install -r requirements.txt
+> python -m pip install -e .
+> python -m ipykernel install --user --name=ir-team-exercise
 > python run.py
 > deactivate
 > git add .
