@@ -477,12 +477,12 @@
   <a href="#step-1-install-python-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install python packages
+        Step 1 — Install python packages
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Install python packages">
+    <nav class="md-nav" aria-label="Step 1 — Install python packages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -505,12 +505,12 @@
   <a href="#step-2-set-up-connection-in-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Set up Connection in Python
+        Step 2 — Set up Connection in Python
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Set up Connection in Python">
+    <nav class="md-nav" aria-label="Step 2 — Set up Connection in Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -530,15 +530,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-write-a-sql-command" class="md-nav__link">
+  <a href="#step-3-write-execute-a-sql-command-in-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Write a SQL Command
+        Step 3 — Write &amp; Execute a SQL Command in Python
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3: Write a SQL Command">
+    <nav class="md-nav" aria-label="Step 3 — Write &amp; Execute a SQL Command in Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -565,6 +565,17 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         
@@ -644,12 +655,12 @@
   <a href="#step-1-install-python-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install python packages
+        Step 1 — Install python packages
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Install python packages">
+    <nav class="md-nav" aria-label="Step 1 — Install python packages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -672,12 +683,12 @@
   <a href="#step-2-set-up-connection-in-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Set up Connection in Python
+        Step 2 — Set up Connection in Python
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Set up Connection in Python">
+    <nav class="md-nav" aria-label="Step 2 — Set up Connection in Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -697,15 +708,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-write-a-sql-command" class="md-nav__link">
+  <a href="#step-3-write-execute-a-sql-command-in-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Write a SQL Command
+        Step 3 — Write &amp; Execute a SQL Command in Python
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3: Write a SQL Command">
+    <nav class="md-nav" aria-label="Step 3 — Write &amp; Execute a SQL Command in Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -741,6 +752,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -764,22 +786,16 @@
 
 
 <h1 id="connecting-to-ods-via-python">Connecting to ODS via Python<a class="headerlink" href="#connecting-to-ods-via-python" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-install-python-packages">Step 1: Install python packages<a class="headerlink" href="#step-1-install-python-packages" title="Permanent link">&para;</a></h2>
+<h2 id="step-1-install-python-packages">Step 1 — Install python packages<a class="headerlink" href="#step-1-install-python-packages" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<ul>
-<li>Open up GitBash</li>
-<li>Run:
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate
 pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class="w"> </span>oracledb
-</code></pre></div></li>
-</ul>
+</code></pre></div>
 </blockquote>
 <h4 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<h2 id="step-2-set-up-connection-in-python">Step 2: Set up Connection in Python<a class="headerlink" href="#step-2-set-up-connection-in-python" title="Permanent link">&para;</a></h2>
-<blockquote>
-<ul>
-<li>
-<p>Open up an existing Jupyter Notebook, Python Script via VSC, or Launch a New Jupyter Notebook.</p>
+<h2 id="step-2-set-up-connection-in-python">Step 2 — Set up Connection in Python<a class="headerlink" href="#step-2-set-up-connection-in-python" title="Permanent link">&para;</a></h2>
+<p>Open up an existing/launch new Jupyter Notebook, or open a Python Script via VSC.</p>
 <blockquote>
 <p>To launch a new jupyter notebook:
 - Open up Anaconda
@@ -787,11 +803,9 @@ pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class=
 - Navigate to the appropriate directory
 - Click <code>New</code></p>
 </blockquote>
-</li>
-<li>
-<p>Set up Connection by copy-pasting and running the following python code</p>
+<p>Set up Connection by copy-pasting and running the following python code
+<mark>Note: update user and password as needed.</mark></p>
 <blockquote>
-<p><mark>Note: update user and password as needed.</mark>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
 
 <span class="n">USER</span> <span class="o">=</span> <span class="s2">&quot;ud_tableau_read&quot;</span>
@@ -803,45 +817,41 @@ pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class=
 <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">&quot;oracle+oracledb://</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PWD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">/?service_name=</span><span class="si">{</span><span class="n">SERVICE</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="p">)</span>
-</code></pre></div></p>
-</blockquote>
-</li>
-</ul>
+</code></pre></div>
 </blockquote>
 <h4 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<h2 id="step-3-write-a-sql-command">Step 3: Write a SQL Command<a class="headerlink" href="#step-3-write-a-sql-command" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-write-execute-a-sql-command-in-python">Step 3 — Write &amp; Execute a SQL Command in Python<a class="headerlink" href="#step-3-write-execute-a-sql-command-in-python" title="Permanent link">&para;</a></h2>
+<p>SQL in Python Example:</p>
 <blockquote>
-<ul>
-<li>
-<p>SQL in Python looks like
 <div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">SELECT &lt;...&gt;</span>
 <span class="s2">FROM &lt;schema&gt;.&lt;table&gt;</span>
 <span class="s2">&lt;...&gt;</span>
 <span class="s2">&quot;&quot;&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Execute SQL command with the engine via pandas
+</code></pre></div>
+</blockquote>
+<p>Execute SQL command with the engine via pandas</p>
+<blockquote>
 <div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-</ul>
+</code></pre></div>
+</blockquote>
 <h4 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>Examples</p>
-<ul>
-<li>Load UD_STUDENT_COURSE
+<ol>
+<li>Load UD_STUDENT_COURSE<blockquote>
 <div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">SELECT *</span>
 <span class="s2">FROM UD_STUDENT.UD_STUDENT_COURSE</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">df_enrl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-</code></pre></div></li>
-</ul>
+</code></pre></div>
+</blockquote>
+</li>
+</ol>
 <h4 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<ul>
-<li>List all Schemas
+<ol>
+<li>List all Schemas<blockquote>
 <div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">SELECT DISTINCT owner</span>
 <span class="s2">FROM all_tab_columns</span>
@@ -849,11 +859,13 @@ pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class=
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="n">df_schemas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 <span class="n">df_schemas</span>
-</code></pre></div></li>
-</ul>
+</code></pre></div>
+</blockquote>
+</li>
+</ol>
 <h4 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<ul>
-<li>List all tables in the UD_STUDENT schema
+<ol>
+<li>List all tables in the UD_STUDENT schema<blockquote>
 <div class="highlight"><pre><span></span><code><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">SELECT DISTINCT table_name</span>
 <span class="s2">FROM all_tab_columns</span>
@@ -862,9 +874,11 @@ pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class=
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="n">df_tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 <span class="n">df_tables</span>
-</code></pre></div></li>
-</ul>
+</code></pre></div>
 </blockquote>
+</li>
+</ol>
+<h4 id="_6"><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 
 
 

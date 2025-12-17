@@ -502,12 +502,12 @@
   <a href="#step-1-create-and-configure-on-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create and Configure on Github
+        Step 1 — Create and Configure on Github
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Create and Configure on Github">
+    <nav class="md-nav" aria-label="Step 1 — Create and Configure on Github">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -530,12 +530,12 @@
   <a href="#step-2-configure-on-machine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Configure on Machine
+        Step 2 — Configure on Machine
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Configure on Machine">
+    <nav class="md-nav" aria-label="Step 2 — Configure on Machine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -592,12 +592,12 @@
   <a href="#step-1-create-and-configure-on-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create and Configure on Github
+        Step 1 — Create and Configure on Github
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Create and Configure on Github">
+    <nav class="md-nav" aria-label="Step 1 — Create and Configure on Github">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -620,12 +620,12 @@
   <a href="#step-2-configure-on-machine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Configure on Machine
+        Step 2 — Configure on Machine
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Configure on Machine">
+    <nav class="md-nav" aria-label="Step 2 — Configure on Machine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -662,8 +662,7 @@
 
 
 <h1 id="create-a-new-git-repository">Create a New Git Repository<a class="headerlink" href="#create-a-new-git-repository" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-create-and-configure-on-github">Step 1: Create and Configure on Github<a class="headerlink" href="#step-1-create-and-configure-on-github" title="Permanent link">&para;</a></h2>
-<blockquote>
+<h2 id="step-1-create-and-configure-on-github">Step 1 — Create and Configure on Github<a class="headerlink" href="#step-1-create-and-configure-on-github" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Go to <code>https://github.com/Decision-Support</code></li>
 <li>Click <code>Repositories</code> in the header</li>
@@ -671,15 +670,12 @@
 <li>On the far right click <code>Use this template</code> -&gt; <code>Create new repository</code></li>
 <li>Give the repository a unique name in the form: <code>ir-&lt;project&gt;-&lt;name&gt;</code></li>
 <li>Select <code>Private</code></li>
-<li>Click <code>Create Repository</code>
-</li>
+<li>Click <code>Create Repository</code></li>
 </ul>
-</blockquote>
 <h4 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<h2 id="step-2-configure-on-machine">Step 2: Configure on Machine<a class="headerlink" href="#step-2-configure-on-machine" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-configure-on-machine">Step 2 — Configure on Machine<a class="headerlink" href="#step-2-configure-on-machine" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<ul>
-<li>Open GitBash
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Decision-Support/ir-&lt;project&gt;-&lt;name&gt;.git
 <span class="nb">cd</span><span class="w"> </span>ir-&lt;project&gt;-&lt;name&gt;
@@ -689,12 +685,11 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 python<span class="w"> </span>init_repo.py
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>myenv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;ir-&lt;project&gt;-&lt;name&gt;&quot;</span>
-deactivate
 git<span class="w"> </span>add<span class="w"> </span>-A
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;repo initialization&quot;</span>
 git<span class="w"> </span>push
-</code></pre></div></li>
-</ul>
+deactivate
+</code></pre></div>
 </blockquote>
 <h4 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 

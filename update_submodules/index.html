@@ -423,18 +423,7 @@
   <a href="#step-1-update-submodules-inside-ir-docs-portal-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Update submodules inside ir-docs-portal Repo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-add-commit-push-changes-to-ir-docs-portal-repo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Add, Commit, Push changes to ir-docs-portal Repo
+        Step 1 — Update submodules inside ir-docs-portal Repo
       
     </span>
   </a>
@@ -560,18 +549,7 @@
   <a href="#step-1-update-submodules-inside-ir-docs-portal-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Update submodules inside ir-docs-portal Repo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-add-commit-push-changes-to-ir-docs-portal-repo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Add, Commit, Push changes to ir-docs-portal Repo
+        Step 1 — Update submodules inside ir-docs-portal Repo
       
     </span>
   </a>
@@ -596,25 +574,25 @@
 
 
 <h1 id="updating-docs-for-existing-submodules">Updating Docs for Existing Submodules<a class="headerlink" href="#updating-docs-for-existing-submodules" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-update-submodules-inside-ir-docs-portal-repo">Step 1: Update submodules inside ir-docs-portal Repo<a class="headerlink" href="#step-1-update-submodules-inside-ir-docs-portal-repo" title="Permanent link">&para;</a></h2>
+<h2 id="step-1-update-submodules-inside-ir-docs-portal-repo">Step 1 — Update submodules inside ir-docs-portal Repo<a class="headerlink" href="#step-1-update-submodules-inside-ir-docs-portal-repo" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote<span class="w"> </span>--merge
+<span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+git<span class="w"> </span>add<span class="w"> </span>ir-pipelines
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;update submodules&quot;</span>
+git<span class="w"> </span>push
+<span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--force
+</code></pre></div>
+</blockquote>
 <ul>
-<li>Open Gitbash</li>
-<li><code>cd ~/ir/ir-pipelines/ir-docs-portal</code></li>
-<li><code>git submodule update --remote --merge</code>
+<li>View documentation here: <code>https://sruddy1.github.io/ir-docs-portal/</code><blockquote>
+<p><mark>Note: May take several minutes for update to take effect</mark></p>
+</blockquote>
 </li>
 </ul>
-</blockquote>
-<h2 id="step-2-add-commit-push-changes-to-ir-docs-portal-repo">Step 2: Add, Commit, Push changes to ir-docs-portal Repo<a class="headerlink" href="#step-2-add-commit-push-changes-to-ir-docs-portal-repo" title="Permanent link">&para;</a></h2>
-<blockquote>
-<ul>
-<li>Stay in Gitbash</li>
-<li><code>cd ~/ir/ir-pipelines/ir-docs-portal</code></li>
-<li><code>git add ir-pipelines</code></li>
-<li>`git commit -m "update submodules"</li>
-<li><code>git push</code></li>
-</ul>
-</blockquote>
 
 
 

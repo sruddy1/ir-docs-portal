@@ -396,7 +396,7 @@
   <a href="#step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Add submodule &lt;reponame> to documentation repo (ir-docs-portal)
+        Step 1 — Add submodule &lt;reponame> to documentation repo (ir-docs-portal)
       
     </span>
   </a>
@@ -407,7 +407,7 @@
   <a href="#step-2-add-new-repo-documentation-to-mkdocs-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Add new repo documentation to mkdocs flow
+        Step 2 — Add new repo documentation to mkdocs flow
       
     </span>
   </a>
@@ -418,7 +418,7 @@
   <a href="#step-3-add-commit-push-changes-to-ir-docs-portal-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Add, Commit, Push changes to ir-docs-portal Repo
+        Step 3 — Add, Commit, Push changes to ir-docs-portal Repo
       
     </span>
   </a>
@@ -429,7 +429,7 @@
   <a href="#step-4-update-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Update Github
+        Step 4 — Update Github
       
     </span>
   </a>
@@ -582,7 +582,7 @@
   <a href="#step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Add submodule &lt;reponame> to documentation repo (ir-docs-portal)
+        Step 1 — Add submodule &lt;reponame> to documentation repo (ir-docs-portal)
       
     </span>
   </a>
@@ -593,7 +593,7 @@
   <a href="#step-2-add-new-repo-documentation-to-mkdocs-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Add new repo documentation to mkdocs flow
+        Step 2 — Add new repo documentation to mkdocs flow
       
     </span>
   </a>
@@ -604,7 +604,7 @@
   <a href="#step-3-add-commit-push-changes-to-ir-docs-portal-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Add, Commit, Push changes to ir-docs-portal Repo
+        Step 3 — Add, Commit, Push changes to ir-docs-portal Repo
       
     </span>
   </a>
@@ -615,7 +615,7 @@
   <a href="#step-4-update-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Update Github
+        Step 4 — Update Github
       
     </span>
   </a>
@@ -639,66 +639,62 @@
 
 
 
-<h1 id="adding-new-submodule-w-documentation-to-ir-docs-portal-repo">Adding New Submodule w/ Documentation to ir-docs-portal Repo<a class="headerlink" href="#adding-new-submodule-w-documentation-to-ir-docs-portal-repo" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal">Step 1: Add submodule &lt;reponame&gt; to documentation repo (ir-docs-portal)<a class="headerlink" href="#step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal" title="Permanent link">&para;</a></h2>
+<h1 id="adding-new-submodule-w-documentation-to-ir-docs-portal-repo">Adding New Submodule w/ Documentation to <code>ir-docs-portal</code> Repo<a class="headerlink" href="#adding-new-submodule-w-documentation-to-ir-docs-portal-repo" title="Permanent link">&para;</a></h1>
+<h2 id="step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal">Step 1 — Add submodule &lt;reponame&gt; to documentation repo (<code>ir-docs-portal</code>)<a class="headerlink" href="#step-1-add-submodule-reponame-to-documentation-repo-ir-docs-portal" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<ul>
-<li>Open GitBash</li>
-<li><code>cd ~/ir/ir-pipelines/ir-docs-portal</code></li>
-<li>`git submodule add https://github.com/sruddy1/&lt;reponame&gt;.git ir-pipelines/&lt;reponame&gt;</li>
-<li><code>git submodule update --init</code></li>
-<li><code>git add .gitmodules ir-pipelines/&lt;reponame&gt;</code></li>
-<li>`git commit -m "added &lt;reponame&gt;"</li>
-<li><code>git push</code>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/sruddy1/&lt;reponame<span class="se">\&gt;</span>.git<span class="w"> </span>ir-pipelines/&lt;reponame<span class="se">\&gt;</span>
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+git<span class="w"> </span>add<span class="w"> </span>.gitmodules<span class="w"> </span>ir-pipelines/&lt;reponame&gt;
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;added &lt;reponame\&gt;&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div>
 </blockquote>
-<h2 id="step-2-add-new-repo-documentation-to-mkdocs-flow">Step 2: Add new repo documentation to mkdocs flow<a class="headerlink" href="#step-2-add-new-repo-documentation-to-mkdocs-flow" title="Permanent link">&para;</a></h2>
-<blockquote>
+<h2 id="step-2-add-new-repo-documentation-to-mkdocs-flow">Step 2 — Add new repo documentation to mkdocs flow<a class="headerlink" href="#step-2-add-new-repo-documentation-to-mkdocs-flow" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Open VSC</li>
-<li>File -&gt; Open File</li>
+<li><code>File</code> -&gt; <code>Open File</code></li>
 <li>Navigate to and open <code>ir-docs-portal/scripts/gen_portal_ref_pages.py</code></li>
 <li>Find python variable <code>PIPELINE_LABELS</code></li>
-<li>Add another row to this variable in the same format as the other rows: "&lt;reponame&gt;": "&lt;pretty label&gt;"<blockquote>
+<li>Add another row to this variable in the same format as the other rows: "&lt;reponame&gt;": "&lt;pretty label&gt;"</li>
+</ul>
 <p>Example</p>
+<blockquote>
 <p><code>"ir-enrollment-projection": "Enrollment Projection"</code></p>
 <p><mark>Warning: You need to add a ',' to the line above the new line you have added.</mark>
 </p>
 </blockquote>
-</li>
+<ul>
 <li>Save and close file</li>
-<li>File -&gt; Open File</li>
+<li><code>File</code> -&gt; <code>Open File</code></li>
 <li>Navigate to and open <code>ir-docs-portal/mkdocs.yml</code></li>
-<li>Locate plugins -&gt; mkdocstrings -&gt; handlers -&gt; python -&gt; paths</li>
+<li>Locate <code>plugins</code> -&gt; <code>mkdocstrings</code> -&gt; <code>handlers</code> -&gt; <code>python</code> -&gt; <code>paths</code></li>
 <li>Add a new row in the same format as the other rows: - ir-pipelines/&lt;reponame&gt;/src</li>
-<li>Save &amp; close file
-</li>
+<li>Save &amp; close file</li>
 </ul>
-</blockquote>
-<h2 id="step-3-add-commit-push-changes-to-ir-docs-portal-repo">Step 3: Add, Commit, Push changes to ir-docs-portal Repo<a class="headerlink" href="#step-3-add-commit-push-changes-to-ir-docs-portal-repo" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-add-commit-push-changes-to-ir-docs-portal-repo">Step 3 — Add, Commit, Push changes to <code>ir-docs-portal</code> Repo<a class="headerlink" href="#step-3-add-commit-push-changes-to-ir-docs-portal-repo" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<ul>
-<li>Open up gitbash</li>
-<li><code>cd ~/ir/ir-pipelines/ir-docs-portal</code></li>
-<li><code>git add .</code></li>
-<li><code>git commit -m "added &lt;reponame&gt;"</code></li>
-<li><code>git push</code>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;added &lt;reponame&gt;&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div>
 </blockquote>
-<h2 id="step-4-update-github">Step 4: Update Github<a class="headerlink" href="#step-4-update-github" title="Permanent link">&para;</a></h2>
+<h2 id="step-4-update-github">Step 4 — Update Github<a class="headerlink" href="#step-4-update-github" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/ir/ir-pipelines/ir-docs-portal
+mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--force
+</code></pre></div>
+</blockquote>
 <ul>
-<li>Open up Gitbash</li>
-<li><code>cd ~/ir/ir-pipelines/ir-docs-portal</code></li>
-<li><code>mkdocs gh-deploy --force</code></li>
 <li>View documentation here: <code>https://sruddy1.github.io/ir-docs-portal/</code><blockquote>
 <p><mark>Note: May take several minutes for update to take effect</mark></p>
 </blockquote>
 </li>
 </ul>
-</blockquote>
 
 
 

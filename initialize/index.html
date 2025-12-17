@@ -1301,85 +1301,65 @@
 <h2 id="connect-to-the-ir-team-retreat-repository">Connect to the <em>ir-team-retreat</em> Repository<a class="headerlink" href="#connect-to-the-ir-team-retreat-repository" title="Permanent link">&para;</a></h2>
 <h4 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <h2 id="step-1-open-git-bash">STEP 1 — Open Git Bash<a class="headerlink" href="#step-1-open-git-bash" title="Permanent link">&para;</a></h2>
-<blockquote>
+<blockquote></blockquote>
 <h4 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-2-create-local-directories">STEP 2 — Create local directories<a class="headerlink" href="#step-2-create-local-directories" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<blockquote>
-<ul>
-<li>
-<p><code>mkdir -p C:/Users/&lt;username&gt;/ir/ir-pipelines</code></p>
-</li>
-<li>
-<p><code>cd C:/Users/&lt;username&gt;/ir/ir-pipelines</code></p>
-</li>
-<li>
-<p><code>pwd</code></p>
-</li>
-</ul>
+<p>```bash
+cd ~
+mkdir -p ./ir/ir-pipelines
+cd ~/ir/ir-pipelines
+</p>
 </blockquote>
 <h4 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-3-update-git-credentials">STEP 3 — Update Git credentials<a class="headerlink" href="#step-3-update-git-credentials" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<blockquote>
-<ul>
-<li><code>git config --global user.name "first last"</code></li>
-<li><code>git config --global user.email "udayton email"</code></li>
-</ul>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;first last&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;&lt;name&gt;1@udayton.edu&quot;</span>
+</code></pre></div>
+</p>
 </blockquote>
 <h4 id="_6"><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-4-clone-the-repository">STEP 4 — Clone the Repository<a class="headerlink" href="#step-4-clone-the-repository" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<blockquote>
-<ul>
-<li><code>git clone https://github.com/sruddy1/ir-team-exercise.git</code></li>
-</ul>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sruddy1/ir-team-exercise.git
+</code></pre></div>
+</p>
 </blockquote>
 <h4 id="_7"><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-5-create-your-personal-branch">STEP 5 — Create Your Personal Branch<a class="headerlink" href="#step-5-create-your-personal-branch" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<blockquote>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ir-team-exercise
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>team-exercise/&lt;your-first-name&gt;
+</code></pre></div>
+</blockquote>
 <ul>
-<li>
-<p><code>cd ir-team-exercise</code></p>
-</li>
-<li>
-<p><code>pwd</code></p>
-</li>
-<li>
-<p><code>git checkout -b team-exercise/&lt;your-first-name&gt;</code></p>
-</li>
-<li>
-<p>Creates a <strong><em>branch</em></strong> in Github, which is essentially your own copy of the repo.</p>
-</li>
+<li>Creates a <strong><em>branch</em></strong> in Github, which is essentially your own copy of the repo.</li>
 <li>Disconnects your changes from the root repo, referred to as "main" or "master"</li>
 <li>Allows changes to be made and pushed to Github without updating "main".</li>
 <li>Prevents conflicts between users who are using separate branches.</li>
 </ul>
-</blockquote>
 <h4 id="_8"><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-6-authenticate-git-account">STEP 6 — Authenticate Git Account<a class="headerlink" href="#step-6-authenticate-git-account" title="Permanent link">&para;</a></h2>
+<p>Run in GitBash:</p>
 <blockquote>
-<blockquote>
+<div class="highlight"><pre><span></span><code>git credential-manager github login
+</code></pre></div>
+</blockquote>
 <ul>
-<li>
-<p><code>git credential-manager github login</code></p>
-</li>
-<li>
-<p>An authentication window will pop up. Go through the steps to authenticate.</p>
-</li>
-<li>
-<p>Now your local machine is authenticated and linked to your github account.</p>
-</li>
+<li>An authentication window will pop up. Go through the steps to authenticate.</li>
+<li>Now your local machine is authenticated and linked to your github account.</li>
 </ul>
-</blockquote>
 <h4 id="_9"><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-</blockquote>
 <h4 id="_10"><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <h2 id="set-up-gitbash-with-anaconda-commands-and-python">Set up GitBash with Anaconda Commands and Python<a class="headerlink" href="#set-up-gitbash-with-anaconda-commands-and-python" title="Permanent link">&para;</a></h2>
 <h4 id="_11"><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
@@ -1387,90 +1367,93 @@
 <blockquote>
 <ul>
 <li>Click the 5th icon down on the left pane </li>
-<li>Click the install button for 3 python plugins: Pylance, Python, and Python debugger</li>
+<li>Click the install button for 3 python plugins: <code>Pylance</code>, <code>Python</code>, and <code>Python debugger</code></li>
 </ul>
-<h4 id="_12"><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 </blockquote>
+<h4 id="_12"><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<blockquote></blockquote>
 <h2 id="step-2-turn-on-view-hidden-files">STEP 2 — Turn on View Hidden Files<a class="headerlink" href="#step-2-turn-on-view-hidden-files" title="Permanent link">&para;</a></h2>
 <blockquote>
-<blockquote>
 <ul>
-<li>Open <code>File Explorer</code> &gt; <code>View</code> &gt; <code>Show</code> &gt; Select <code>Hidden Items</code></li>
+<li>Open <code>File Explorer</code></li>
+<li>Go to <code>View</code> &gt; <code>Show</code> &gt; Select <code>Hidden Items</code>
+</li>
 </ul>
 </blockquote>
 <h4 id="_13"><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-</blockquote>
+<blockquote></blockquote>
 <h2 id="step-3-create-bashrc">STEP 3 — Create ~/.bashrc<a class="headerlink" href="#step-3-create-bashrc" title="Permanent link">&para;</a></h2>
-<blockquote>
 <blockquote>
 <ul>
 <li>Open Git Bash</li>
-<li>(type) <code>cd ~</code></li>
-<li>(type) <code>touch ~/.bashrc</code></li>
 </ul>
 </blockquote>
-<h4 id="_14"><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>Run in GitBash:</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
+touch<span class="w"> </span>~/.bashrc
+</code></pre></div>
 </blockquote>
+<h4 id="_14"><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<blockquote></blockquote>
 <h2 id="step-4-update-bashrc">STEP 4 — Update ~/.bashrc<a class="headerlink" href="#step-4-update-bashrc" title="Permanent link">&para;</a></h2>
-<blockquote>
-<blockquote>
 <ul>
 <li>
-<p>Open VSC</p>
+<p>Open Visual Studio Code (VSC)</p>
 </li>
 <li>
 <p>Go to <code>File</code> &gt; <code>Open File</code> &gt; Open <code>C:\Users\&lt;username&gt;\.bashrc</code></p>
 </li>
 <li>
-<p>Confirm/Find path to conda.sh based on installation type:</p>
-</li>
-<li>
-<p>All Users Installation: <code>/c/ProgramData/anaconda3/etc/profile.d/conda.sh</code></p>
-</li>
-<li>
-<p>Single User Installation: <code>/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh</code></p>
-</li>
-<li>
-<p>Confirm/Find path to anaconda3 folder based on installation type:</p>
-</li>
-<li>
-<p>All Users Installation: <code>/c/ProgramData/anaconda3</code></p>
-</li>
-<li>
-<p>Single User Installation: <code>/c/Users/&lt;username&gt;/anaconda3</code></p>
-</li>
-<li>
-<p>Add the following command</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>if [ -f &quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot; ]; then
- . &quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3&quot;
-fi
-</code></pre></div>
+<p>Using File Explorer: Confirm/Find path to conda.sh based on installation type:</p>
+<blockquote>
 <ul>
-<li>Add the following command</li>
+<li>All Users Installation: <code>/c/ProgramData/anaconda3/etc/profile.d/conda.sh</code></li>
+<li>Single User Installation: <code>/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh</code></li>
 </ul>
-<p><code>export PATH="/c/Users/&lt;username&gt;/AppData/Local/anaconda3:$PATH"</code>
-</p>
+</blockquote>
+</li>
+<li>
+<p>Using File Explorer: Confirm/Find path to anaconda3 folder based on installation type:</p>
+<blockquote>
+<ul>
+<li>All Users Installation: <code>/c/ProgramData/anaconda3</code></li>
+<li>Single User Installation: <code>/c/Users/&lt;username&gt;/anaconda3</code></li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>Copy-paste the following command to the <code>.bashrc</code> file that is open in VSC:</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+</blockquote>
+</li>
+<li>
+<p>Copy-paste the following command to the <code>.bashrc</code> file that is open in VSC:</p>
+</li>
+</ul>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+.<span class="w"> </span><span class="s2">&quot;/c/Users/&lt;username&gt;/AppData/Local/anaconda3/etc/profile.d/conda.sh&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+</blockquote>
 <ul>
 <li>
 <p>Save &amp; Close File</p>
 </li>
 <li>
-<p>Open GitBash (if already open, close and reopen)</p>
-</li>
-<li>
-<p><code>source ~/.bashrc</code></p>
-</li>
-<li>
-<p><code>conda init bash</code></p>
-</li>
-<li>
-<p>Close GitBash </p>
+<p>Close &amp; Reopen GitBash</p>
 </li>
 </ul>
+<blockquote>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>init<span class="w"> </span>bash
+</code></pre></div>
 </blockquote>
-</blockquote>
+<ul>
+<li>Close GitBash </li>
+</ul>
 
 
 
